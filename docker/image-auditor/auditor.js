@@ -11,15 +11,11 @@
 
  The sounds played by musicians are transported in json payloads with the following format:
 
-   {
-  	"uuid" : "aa7d8cb3-a15f-4f06-a0eb-b8feb6244a60",
-  	"instrument" : "piano",
-  	"activeSince" : "2016-04-27T05:20:50.731Z"
-   }
+   {"uuid":"ce62bd80-3266-11e7-ad47-ff6021a04453","sound":"ti-ta-ti"} 
 
  Usage: to start the station, use the following command in a terminal
 
-   node station.js
+   node auditor.js
 
 */
 
@@ -28,37 +24,72 @@
  * thermometer.js and station.js. The address and the port are part of our simple 
  * application-level protocol
  */
-var protocol = require('./musicians-protocol');
+var protocol = require('./auditorProtocol');
 
 /*
  * We use a standard Node.js module to work with UDP
  */
 var dgram = require('dgram');
 
+/*
+ * We use a Map to keep a record of all musicians the key being the musician uuid
+ */
+ var allMusicians = new Map();
+
 /* 
  * Let's create a datagram socket. We will use it to listen for datagrams published in the
  * multicast group by musicianss and containing sounds
  */
 var auditorSocket = dgram.createSocket('udp4');
-auditorSocket.bind(protocol.PROTOCOL_PORT, function() {
+auditorSocket.bind(protocol.MULTICAST_PORT, function() {
   console.log("Joining multicast group");
-  auditorSocket.addMembership(protocol.PROTOCOL_MULTICAST_ADDRESS);
+  auditorSocket.addMembership(protocol.MULTICAST_ADDRESS);
 });
 
 /* 
  * This call back is invoked when a new datagram has arrived.
  */
 auditorSocket.on('message', function(msg, source) {
-	console.log("Data has arrived: " + msg + ". Source port: " + source.port);
+	//console.log("Data has arrived: " + msg + ". Source port: " + source.port);
 	msg = JSON.parse(msg); // we need to parse the received message to an object
 	//and we assusme the message received is from a unique music instrument, hence a unique identifier uuid
-	var musicInstrument = 
+	var musician = 
 	{
 		'uuid' : msg.uuid,
-		'sound': msg.sound,
-		'activeSince' : msg.date,
+		'instrument': protocol.sounds[msg.sound],
+		'activeSince' : Date.now() //The Date.now() method returns the number of milliseconds elapsed since 
+									// January 1st 1970 00:00:00 UTC.
 	}
-
 	
+	allMusicians.set(musician.uuid, musician);
+	
+	console.log("Data has arrived: " + musician.uuid + " " + musician.instrument + " " + musician.activeSince);	
 });
 
+
+/* 
+ * now we need a tcp server to communicate the list of activ musicians
+ * that means those that have emitted at least one signal during the 
+ * last 5 seconds (5000 ms)
+ * server code based on https://gist.github.com/tedmiston/5935757
+ *
+ */
+var net = require('net');
+
+var server = net.createServer(function(socket) {
+	var alive = [];
+	var now = Date.now();
+	for (var [uuid, musician] of allMusicians)
+	{
+		if (now - musician.activeSince < 5000){
+			alive.push(musician);
+		}
+	}		
+	
+	socket.write(JSON.stringify(alive));
+	
+	socket.end();
+
+});
+
+server.listen(protocol.TCP_PORT, protocol.TCP_IP_ADDRESS);
