@@ -1,9 +1,12 @@
 FROM node:4.3.1
-MAINTAINER Abass Mahdavi <amh@mahdavi.org>
+MAINTAINER Abass Mahdavi <abass.mahdavi@heig-vd.ch>
 
 #
 # When we build the image, we copy the executable jar in the image file system. 
 #
 COPY src /opt/app/
 
-CMD ["node", "/opt/app/station.js"]
+WORKDIR /opt/app/
+RUN npm install
+
+CMD ["node", "/opt/app/musician.js"]

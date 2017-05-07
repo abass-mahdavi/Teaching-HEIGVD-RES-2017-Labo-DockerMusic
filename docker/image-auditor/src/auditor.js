@@ -79,7 +79,7 @@ var net = require('net');
 var server = net.createServer(function(socket) {
 	var alive = [];
 	var now = Date.now();
-	for (var [uuid, musician] of allMusicians)
+	for (var musician of allMusicians.entries())
 	{
 		if (now - musician.activeSince < 5000){
 			alive.push(musician);

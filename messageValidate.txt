@@ -1,0 +1,2127 @@
+amh@DESKTOP-AUG26S6 MINGW64 ~/Documents/Teaching-HEIGVD-RES-2016-LabBox/RES/Teaching-HEIGVD-RES-2017-Labo-DockerMusic (master)
+$ ./validate.sh
+
+
+*** Killing all running containers
+
+Error response from daemon: Cannot kill container 1ec92dfcfdbe: Container 1ec92dfcfdbe011e09297ba4ad2d6669ffe22e6892e619135cccae96e3ca9045 is not running
+Error response from daemon: Cannot kill container 3703d70a63d7: Container 3703d70a63d79a02a5aee380a2e6d31776509ad139577e5a1b8194984ac1d301 is not running
+Error response from daemon: Cannot kill container d27a3ec6c0c1: Container d27a3ec6c0c1a01847d8d2bde976192aa55c0a625be7991ea077cf3a10ca391b is not running
+Error response from daemon: Cannot kill container 806c83421a08: Container 806c83421a080706815009cefca5bf1729b2e6f9c7856a6632d85af9b078e54d is not running
+Error response from daemon: Cannot kill container 3db501f40109: Container 3db501f40109fc4a2d09240e75cb2919b74225f72944db1c7d2fe180c9bb1342 is not running
+Error response from daemon: Cannot kill container 600342629a53: Container 600342629a53187945fcf120f860f919cddac575dd2a3137d5356dc2375a3b0f is not running
+Error response from daemon: Cannot kill container a1dcdee9cccc: Container a1dcdee9cccc894aa7949bcce5792635d1b949737a4f5e1a263e50aed3293542 is not running
+Error response from daemon: Cannot kill container 13b783ef4bf4: Container 13b783ef4bf4a7625b517b1eabc0cf3abce775da396e0f2551d8506d5c827a57 is not running
+Error response from daemon: Cannot kill container 77a1523e9995: Container 77a1523e9995354cd948eb88eef8001a0d1e7511fa1f910a9c1e923114f3e752 is not running
+Error response from daemon: Cannot kill container 183d48be8c08: Container 183d48be8c08f04e0f0fdcb8990d3c76745b21cd0e84ff7b643ad1100591be56 is not running
+Error response from daemon: Cannot kill container 2b10978cc90f: Container 2b10978cc90f363f5bf2f9952f23f373123f2c827b93a801a3e8c250de098948 is not running
+Error response from daemon: Cannot kill container 3e96cf334588: Container 3e96cf334588317acf72bb8605413b0c5ed27f7fa0091d3c05fa845ded2c1f27 is not running
+1ec92dfcfdbe
+3703d70a63d7
+d27a3ec6c0c1
+806c83421a08
+3db501f40109
+600342629a53
+a1dcdee9cccc
+13b783ef4bf4
+77a1523e9995
+183d48be8c08
+2b10978cc90f
+3e96cf334588
+
+
+*** Deleting our 3 Docker images, if they exist
+
+Untagged: res/auditor:latest
+Deleted: sha256:b98cc9607faf1a935dfee9e3a291014bdb4ca2b001c5bd50fc4d6ae49e17925e
+Deleted: sha256:fa99e3b54914f81c195727a26672731de6a016e169f48256b01753447a9bc918
+Deleted: sha256:4d1a18d598264705ecf506ff8a6c904208a6973880648e6dbb5b835e4c6061e3
+Deleted: sha256:017183f7410f7a503102aef96f69449d47108542dc77d8a649e867364a19c3dd
+Deleted: sha256:af8a8ff7386a9ac85f0362bb67020d764d9fee286ef4393b425bd4240e090204
+Deleted: sha256:025c1c5606d2fe1b70ed1e2c5257b97a39ec913d60b91ba95fb7c58d9818c3fd
+Untagged: res/musician:latest
+Deleted: sha256:636fd1a1b367553e0538810a5cc7ecb2e8945d9aeb5670ddd085989ae7a4062b
+Deleted: sha256:9f20f1647992c5f3ae09d9afb67ac34144bde5eaa8d017bcc97019ac5b5e4b4a
+Deleted: sha256:8edef98d688283fbe000864a9d14237da4d7904e28753fdfa3a28c85fcc23efb
+Deleted: sha256:9d5a203dee88678d9a8e18c52eca3c2b46b152d215c517f59c6642921b00a8d8
+Deleted: sha256:89c5c2ab75b03d7b7fa0f5ed82539a8890a68feb68ae8c96d3fe9bbdba612b4d
+Deleted: sha256:f8527f6d6653360deea3b37038e71008dc3b8da43cb6ce59714a43ddd9f1f5fb
+Deleted: sha256:293452e92501a6b03b4af048346c5b73f5a55018fd7296cdfe627ecdd5e16c5e
+Untagged: res/validate-music:latest
+Deleted: sha256:bde88a04186f46e0dfa82e6d0b23ce3f572adb624c2c8da0322a84b6a273e7c0
+Deleted: sha256:89099ae4661f596b3f0473ad1a5488c6654a993c1dd014f41eb012a1226c97eb
+Deleted: sha256:638bda73d51ff19d634352bc22cbe217e39a7ac90c9e46f87d9d426b99acdc0a
+Deleted: sha256:8a5ecea13da8051f7e7f77d99cdbd2a5d5b1bd5a25838c96851707463faa76fe
+Deleted: sha256:240240b235c3ac2f8118a73b146bd976105e6a55bf2f144ee451fb005083b488
+Deleted: sha256:1b88a86f1254cf9402ebf6d063dd5c925057a0de725a415710f3707615bdc70a
+Deleted: sha256:89804909160141f912ebd65678ce7ad26e6ddc0c194ee2b8140e0fd04b30cd2a
+
+
+*** Rebuilding our 3 Docker images
+
+Sending build context to Docker daemon  8.192kB
+Step 1/6 : FROM node:4.3.1
+ ---> ddb7a7253258
+Step 2/6 : MAINTAINER Abass Mahdavi <abass.mahdavi@heig-vd.ch>
+ ---> Running in 91d7bef90c05
+ ---> 4f2b4e515e75
+Removing intermediate container 91d7bef90c05
+Step 3/6 : COPY src /opt/app/
+ ---> ec8377124f81
+Removing intermediate container 7706c37a16ae
+Step 4/6 : WORKDIR /opt/app/
+ ---> 0e6242c4e66d
+Removing intermediate container 4a838c939bda
+Step 5/6 : RUN npm install
+ ---> Running in 780ec5614d42
+npm info it worked if it ends with ok
+npm info using npm@2.14.12
+npm info using node@v4.3.1
+npm WARN package.json music-validation@1.0.0 No description
+npm WARN package.json music-validation@1.0.0 No repository field.
+npm WARN package.json music-validation@1.0.0 No README data
+npm info preinstall music-validation@1.0.0
+npm info attempt registry request try #1 at 8:56:00 AM
+npm http request GET https://registry.npmjs.org/chai
+npm info attempt registry request try #1 at 8:56:00 AM
+npm http request GET https://registry.npmjs.org/chance
+npm info attempt registry request try #1 at 8:56:00 AM
+npm http request GET https://registry.npmjs.org/dockerode
+npm info attempt registry request try #1 at 8:56:00 AM
+npm http request GET https://registry.npmjs.org/async
+npm http 200 https://registry.npmjs.org/chance
+npm http 200 https://registry.npmjs.org/chai
+npm http 200 https://registry.npmjs.org/async
+npm http 200 https://registry.npmjs.org/dockerode
+npm info retry fetch attempt 1 at 8:56:00 AM
+npm info attempt registry request try #1 at 8:56:00 AM
+npm http fetch GET https://registry.npmjs.org/async/-/async-2.4.0.tgz
+npm info retry fetch attempt 1 at 8:56:00 AM
+npm info attempt registry request try #1 at 8:56:00 AM
+npm http fetch GET https://registry.npmjs.org/chance/-/chance-1.0.8.tgz
+npm info retry fetch attempt 1 at 8:56:00 AM
+npm info attempt registry request try #1 at 8:56:00 AM
+npm http fetch GET https://registry.npmjs.org/dockerode/-/dockerode-2.4.3.tgz
+npm info retry fetch attempt 1 at 8:56:00 AM
+npm info attempt registry request try #1 at 8:56:00 AM
+npm http fetch GET https://registry.npmjs.org/chai/-/chai-3.5.0.tgz
+npm http fetch 200 https://registry.npmjs.org/async/-/async-2.4.0.tgz
+npm http fetch 200 https://registry.npmjs.org/chai/-/chai-3.5.0.tgz
+npm http fetch 200 https://registry.npmjs.org/chance/-/chance-1.0.8.tgz
+npm http fetch 200 https://registry.npmjs.org/dockerode/-/dockerode-2.4.3.tgz
+npm info install chai@3.5.0 into /opt/app
+npm info install async@2.4.0 into /opt/app
+npm info install dockerode@2.4.3 into /opt/app
+npm info install chance@1.0.8 into /opt/app
+npm info installOne chai@3.5.0
+npm info installOne async@2.4.0
+npm info installOne dockerode@2.4.3
+npm info installOne chance@1.0.8
+npm info preinstall dockerode@2.4.3
+npm info attempt registry request try #1 at 8:56:02 AM
+npm http request GET https://registry.npmjs.org/concat-stream
+npm info attempt registry request try #1 at 8:56:02 AM
+npm http request GET https://registry.npmjs.org/docker-modem
+npm info attempt registry request try #1 at 8:56:02 AM
+npm http request GET https://registry.npmjs.org/tar-fs
+npm info preinstall chai@3.5.0
+npm info attempt registry request try #1 at 8:56:02 AM
+npm http request GET https://registry.npmjs.org/assertion-error
+npm info attempt registry request try #1 at 8:56:02 AM
+npm http request GET https://registry.npmjs.org/deep-eql
+npm info attempt registry request try #1 at 8:56:02 AM
+npm http request GET https://registry.npmjs.org/type-detect
+npm info preinstall chance@1.0.8
+npm info build /opt/app/node_modules/chance
+npm info linkStuff chance@1.0.8
+npm info install chance@1.0.8
+npm info postinstall chance@1.0.8
+npm info preinstall async@2.4.0
+npm http 200 https://registry.npmjs.org/tar-fs
+npm info retry fetch attempt 1 at 8:56:03 AM
+npm info attempt registry request try #1 at 8:56:03 AM
+npm http fetch GET https://registry.npmjs.org/tar-fs/-/tar-fs-1.12.0.tgz
+npm info attempt registry request try #1 at 8:56:03 AM
+npm http request GET https://registry.npmjs.org/lodash
+npm http 200 https://registry.npmjs.org/concat-stream
+npm http 200 https://registry.npmjs.org/docker-modem
+npm info retry fetch attempt 1 at 8:56:03 AM
+npm info attempt registry request try #1 at 8:56:03 AM
+npm http fetch GET https://registry.npmjs.org/concat-stream/-/concat-stream-1.5.2.tgz
+npm info retry fetch attempt 1 at 8:56:03 AM
+npm info attempt registry request try #1 at 8:56:03 AM
+npm http fetch GET https://registry.npmjs.org/docker-modem/-/docker-modem-0.3.7.tgz
+npm http 200 https://registry.npmjs.org/assertion-error
+npm http 200 https://registry.npmjs.org/deep-eql
+npm http 200 https://registry.npmjs.org/type-detect
+npm info retry fetch attempt 1 at 8:56:03 AM
+npm info attempt registry request try #1 at 8:56:03 AM
+npm http fetch GET https://registry.npmjs.org/assertion-error/-/assertion-error-1.0.2.tgz
+npm info retry fetch attempt 1 at 8:56:03 AM
+npm info attempt registry request try #1 at 8:56:03 AM
+npm http fetch GET https://registry.npmjs.org/deep-eql/-/deep-eql-0.1.3.tgz
+npm http fetch 200 https://registry.npmjs.org/tar-fs/-/tar-fs-1.12.0.tgz
+npm info retry fetch attempt 1 at 8:56:03 AM
+npm info attempt registry request try #1 at 8:56:03 AM
+npm http fetch GET https://registry.npmjs.org/type-detect/-/type-detect-1.0.0.tgz
+npm http 200 https://registry.npmjs.org/lodash
+npm http fetch 200 https://registry.npmjs.org/concat-stream/-/concat-stream-1.5.2.tgz
+npm info retry fetch attempt 1 at 8:56:03 AM
+npm info attempt registry request try #1 at 8:56:03 AM
+npm http fetch GET https://registry.npmjs.org/lodash/-/lodash-4.17.4.tgz
+npm http fetch 200 https://registry.npmjs.org/docker-modem/-/docker-modem-0.3.7.tgz
+npm info install tar-fs@1.12.0 into /opt/app/node_modules/dockerode
+npm info install concat-stream@1.5.2 into /opt/app/node_modules/dockerode
+npm info install docker-modem@0.3.7 into /opt/app/node_modules/dockerode
+npm info installOne tar-fs@1.12.0
+npm info installOne concat-stream@1.5.2
+npm info installOne docker-modem@0.3.7
+npm http fetch 200 https://registry.npmjs.org/assertion-error/-/assertion-error-1.0.2.tgz
+npm http fetch 200 https://registry.npmjs.org/deep-eql/-/deep-eql-0.1.3.tgz
+npm info preinstall concat-stream@1.5.2
+npm info attempt registry request try #1 at 8:56:03 AM
+npm http request GET https://registry.npmjs.org/inherits
+npm info attempt registry request try #1 at 8:56:03 AM
+npm http request GET https://registry.npmjs.org/typedarray
+npm info attempt registry request try #1 at 8:56:03 AM
+npm http request GET https://registry.npmjs.org/readable-stream
+npm http fetch 200 https://registry.npmjs.org/type-detect/-/type-detect-1.0.0.tgz
+npm http fetch 200 https://registry.npmjs.org/lodash/-/lodash-4.17.4.tgz
+npm info preinstall docker-modem@0.3.7
+npm info install assertion-error@1.0.2 into /opt/app/node_modules/chai
+npm info install deep-eql@0.1.3 into /opt/app/node_modules/chai
+npm info install type-detect@1.0.0 into /opt/app/node_modules/chai
+npm info installOne assertion-error@1.0.2
+npm info installOne deep-eql@0.1.3
+npm info installOne type-detect@1.0.0
+npm info attempt registry request try #1 at 8:56:03 AM
+npm http request GET https://registry.npmjs.org/split-ca
+npm info attempt registry request try #1 at 8:56:03 AM
+npm http request GET https://registry.npmjs.org/JSONStream
+npm info attempt registry request try #1 at 8:56:03 AM
+npm http request GET https://registry.npmjs.org/debug
+npm info preinstall tar-fs@1.12.0
+npm info preinstall assertion-error@1.0.2
+npm info preinstall deep-eql@0.1.3
+npm info preinstall type-detect@1.0.0
+npm info attempt registry request try #1 at 8:56:03 AM
+npm http request GET https://registry.npmjs.org/tar-stream
+npm info attempt registry request try #1 at 8:56:03 AM
+npm http request GET https://registry.npmjs.org/mkdirp
+npm info attempt registry request try #1 at 8:56:03 AM
+npm http request GET https://registry.npmjs.org/pump
+npm info build /opt/app/node_modules/chai/node_modules/assertion-error
+npm info linkStuff assertion-error@1.0.2
+npm info install assertion-error@1.0.2
+npm info postinstall assertion-error@1.0.2
+npm info build /opt/app/node_modules/chai/node_modules/type-detect
+npm info retry fetch attempt 1 at 8:56:03 AM
+npm info attempt registry request try #1 at 8:56:03 AM
+npm http fetch GET https://registry.npmjs.org/type-detect/-/type-detect-0.1.1.tgz
+npm info linkStuff type-detect@1.0.0
+npm http 200 https://registry.npmjs.org/typedarray
+npm info install type-detect@1.0.0
+npm info postinstall type-detect@1.0.0
+npm info retry fetch attempt 1 at 8:56:03 AM
+npm info attempt registry request try #1 at 8:56:03 AM
+npm http fetch GET https://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz
+npm http 200 https://registry.npmjs.org/readable-stream
+npm info retry fetch attempt 1 at 8:56:03 AM
+npm info attempt registry request try #1 at 8:56:03 AM
+npm http fetch GET https://registry.npmjs.org/readable-stream/-/readable-stream-2.0.6.tgz
+npm info retry fetch attempt 1 at 8:56:03 AM
+npm info attempt registry request try #1 at 8:56:03 AM
+npm http fetch GET https://registry.npmjs.org/readable-stream/-/readable-stream-1.0.34.tgz
+npm http 200 https://registry.npmjs.org/inherits
+npm info retry fetch attempt 1 at 8:56:03 AM
+npm info attempt registry request try #1 at 8:56:03 AM
+npm http fetch GET https://registry.npmjs.org/inherits/-/inherits-2.0.3.tgz
+npm http 200 https://registry.npmjs.org/split-ca
+npm http 200 https://registry.npmjs.org/JSONStream
+npm info install lodash@4.17.4 into /opt/app/node_modules/async
+npm info installOne lodash@4.17.4
+npm info retry fetch attempt 1 at 8:56:04 AM
+npm info attempt registry request try #1 at 8:56:04 AM
+npm http fetch GET https://registry.npmjs.org/split-ca/-/split-ca-1.0.1.tgz
+npm info retry fetch attempt 1 at 8:56:04 AM
+npm info attempt registry request try #1 at 8:56:04 AM
+npm http fetch GET https://registry.npmjs.org/JSONStream/-/JSONStream-0.10.0.tgz
+npm http 200 https://registry.npmjs.org/tar-stream
+npm http fetch 200 https://registry.npmjs.org/type-detect/-/type-detect-0.1.1.tgz
+npm http 200 https://registry.npmjs.org/mkdirp
+npm http 200 https://registry.npmjs.org/pump
+npm http 200 https://registry.npmjs.org/debug
+npm info retry fetch attempt 1 at 8:56:04 AM
+npm info attempt registry request try #1 at 8:56:04 AM
+npm http fetch GET https://registry.npmjs.org/tar-stream/-/tar-stream-1.5.2.tgz
+npm info retry fetch attempt 1 at 8:56:04 AM
+npm info attempt registry request try #1 at 8:56:04 AM
+npm http fetch GET https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.1.tgz
+npm info retry fetch attempt 1 at 8:56:04 AM
+npm info attempt registry request try #1 at 8:56:04 AM
+npm http fetch GET https://registry.npmjs.org/pump/-/pump-1.0.2.tgz
+npm http fetch 200 https://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz
+npm info install type-detect@0.1.1 into /opt/app/node_modules/chai/node_modules/deep-eql
+npm info installOne type-detect@0.1.1
+npm info retry fetch attempt 1 at 8:56:04 AM
+npm info attempt registry request try #1 at 8:56:04 AM
+npm http fetch GET https://registry.npmjs.org/debug/-/debug-2.6.6.tgz
+npm http fetch 200 https://registry.npmjs.org/readable-stream/-/readable-stream-2.0.6.tgz
+npm info preinstall type-detect@0.1.1
+npm http fetch 200 https://registry.npmjs.org/readable-stream/-/readable-stream-1.0.34.tgz
+npm info build /opt/app/node_modules/chai/node_modules/deep-eql/node_modules/type-detect
+npm info linkStuff type-detect@0.1.1
+npm http fetch 200 https://registry.npmjs.org/inherits/-/inherits-2.0.3.tgz
+npm info install type-detect@0.1.1
+npm info postinstall type-detect@0.1.1
+npm info build /opt/app/node_modules/chai/node_modules/deep-eql
+npm info linkStuff deep-eql@0.1.3
+npm info install deep-eql@0.1.3
+npm info postinstall deep-eql@0.1.3
+npm info build /opt/app/node_modules/chai
+npm info linkStuff chai@3.5.0
+npm info install chai@3.5.0
+npm info postinstall chai@3.5.0
+npm info install typedarray@0.0.6 into /opt/app/node_modules/dockerode/node_modules/concat-stream
+npm info install inherits@2.0.3 into /opt/app/node_modules/dockerode/node_modules/concat-stream
+npm info install readable-stream@2.0.6 into /opt/app/node_modules/dockerode/node_modules/concat-stream
+npm info installOne typedarray@0.0.6
+npm info installOne inherits@2.0.3
+npm info installOne readable-stream@2.0.6
+npm http fetch 200 https://registry.npmjs.org/split-ca/-/split-ca-1.0.1.tgz
+npm info preinstall inherits@2.0.3
+npm info build /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/inherits
+npm info preinstall typedarray@0.0.6
+npm http fetch 200 https://registry.npmjs.org/JSONStream/-/JSONStream-0.10.0.tgz
+npm info linkStuff inherits@2.0.3
+npm info install inherits@2.0.3
+npm info postinstall inherits@2.0.3
+npm info build /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/typedarray
+npm info linkStuff typedarray@0.0.6
+npm info install typedarray@0.0.6
+npm info postinstall typedarray@0.0.6
+npm info preinstall readable-stream@2.0.6
+npm info attempt registry request try #1 at 8:56:04 AM
+npm http request GET https://registry.npmjs.org/core-util-is
+npm info attempt registry request try #1 at 8:56:04 AM
+npm http request GET https://registry.npmjs.org/isarray
+npm info attempt registry request try #1 at 8:56:04 AM
+npm http request GET https://registry.npmjs.org/process-nextick-args
+npm info attempt registry request try #1 at 8:56:04 AM
+npm http request GET https://registry.npmjs.org/string_decoder
+npm info attempt registry request try #1 at 8:56:04 AM
+npm http request GET https://registry.npmjs.org/util-deprecate
+npm http fetch 200 https://registry.npmjs.org/tar-stream/-/tar-stream-1.5.2.tgz
+npm http fetch 200 https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.1.tgz
+npm http fetch 200 https://registry.npmjs.org/pump/-/pump-1.0.2.tgz
+npm info install tar-stream@1.5.2 into /opt/app/node_modules/dockerode/node_modules/tar-fs
+npm info install mkdirp@0.5.1 into /opt/app/node_modules/dockerode/node_modules/tar-fs
+npm info install pump@1.0.2 into /opt/app/node_modules/dockerode/node_modules/tar-fs
+npm info installOne tar-stream@1.5.2
+npm info installOne mkdirp@0.5.1
+npm info installOne pump@1.0.2
+npm http fetch 200 https://registry.npmjs.org/debug/-/debug-2.6.6.tgz
+npm info preinstall tar-stream@1.5.2
+npm info preinstall pump@1.0.2
+npm http 200 https://registry.npmjs.org/isarray
+npm http 200 https://registry.npmjs.org/core-util-is
+npm info retry fetch attempt 1 at 8:56:05 AM
+npm info attempt registry request try #1 at 8:56:05 AM
+npm http fetch GET https://registry.npmjs.org/isarray/-/isarray-1.0.0.tgz
+npm info attempt registry request try #1 at 8:56:05 AM
+npm http request GET https://registry.npmjs.org/xtend
+npm info attempt registry request try #1 at 8:56:05 AM
+npm http request GET https://registry.npmjs.org/bl
+npm info attempt registry request try #1 at 8:56:05 AM
+npm http request GET https://registry.npmjs.org/end-of-stream
+npm info retry fetch attempt 1 at 8:56:05 AM
+npm info attempt registry request try #1 at 8:56:05 AM
+npm http fetch GET https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.2.tgz
+npm http 200 https://registry.npmjs.org/process-nextick-args
+npm http 200 https://registry.npmjs.org/string_decoder
+npm http 200 https://registry.npmjs.org/util-deprecate
+npm info retry fetch attempt 1 at 8:56:05 AM
+npm info attempt registry request try #1 at 8:56:05 AM
+npm http fetch GET https://registry.npmjs.org/readable-stream/-/readable-stream-2.2.9.tgz
+npm info attempt registry request try #1 at 8:56:05 AM
+npm http request GET https://registry.npmjs.org/once
+npm info retry fetch attempt 1 at 8:56:05 AM
+npm info attempt registry request try #1 at 8:56:05 AM
+npm http fetch GET https://registry.npmjs.org/process-nextick-args/-/process-nextick-args-1.0.7.tgz
+npm info retry fetch attempt 1 at 8:56:05 AM
+npm info attempt registry request try #1 at 8:56:05 AM
+npm http fetch GET https://registry.npmjs.org/string_decoder/-/string_decoder-0.10.31.tgz
+npm info retry fetch attempt 1 at 8:56:05 AM
+npm info attempt registry request try #1 at 8:56:05 AM
+npm http fetch GET https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz
+npm info install readable-stream@1.0.34 into /opt/app/node_modules/dockerode/node_modules/docker-modem
+npm info install split-ca@1.0.1 into /opt/app/node_modules/dockerode/node_modules/docker-modem
+npm info install debug@2.6.6 into /opt/app/node_modules/dockerode/node_modules/docker-modem
+npm info install JSONStream@0.10.0 into /opt/app/node_modules/dockerode/node_modules/docker-modem
+npm info installOne readable-stream@1.0.34
+npm info installOne split-ca@1.0.1
+npm info installOne debug@2.6.6
+npm info installOne JSONStream@0.10.0
+npm http fetch 200 https://registry.npmjs.org/isarray/-/isarray-1.0.0.tgz
+npm http fetch 200 https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.2.tgz
+npm http 200 https://registry.npmjs.org/xtend
+npm http 200 https://registry.npmjs.org/end-of-stream
+npm info retry fetch attempt 1 at 8:56:05 AM
+npm info attempt registry request try #1 at 8:56:05 AM
+npm http fetch GET https://registry.npmjs.org/xtend/-/xtend-4.0.1.tgz
+npm info retry fetch attempt 1 at 8:56:05 AM
+npm info attempt registry request try #1 at 8:56:05 AM
+npm http fetch GET https://registry.npmjs.org/end-of-stream/-/end-of-stream-1.4.0.tgz
+npm http fetch 200 https://registry.npmjs.org/readable-stream/-/readable-stream-2.2.9.tgz
+npm http 200 https://registry.npmjs.org/bl
+npm info retry fetch attempt 1 at 8:56:05 AM
+npm info attempt registry request try #1 at 8:56:05 AM
+npm http fetch GET https://registry.npmjs.org/bl/-/bl-1.2.1.tgz
+npm info preinstall mkdirp@0.5.1
+npm info attempt registry request try #1 at 8:56:05 AM
+npm http request GET https://registry.npmjs.org/minimist
+npm http 200 https://registry.npmjs.org/once
+npm http fetch 200 https://registry.npmjs.org/string_decoder/-/string_decoder-0.10.31.tgz
+npm http fetch 200 https://registry.npmjs.org/process-nextick-args/-/process-nextick-args-1.0.7.tgz
+npm info retry fetch attempt 1 at 8:56:05 AM
+npm info attempt registry request try #1 at 8:56:05 AM
+npm http fetch GET https://registry.npmjs.org/once/-/once-1.4.0.tgz
+npm info preinstall split-ca@1.0.1
+npm info preinstall readable-stream@1.0.34
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/split-ca
+npm info preinstall debug@2.6.6
+npm info linkStuff split-ca@1.0.1
+npm http fetch 200 https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz
+npm info install split-ca@1.0.1
+npm info postinstall split-ca@1.0.1
+npm info retry fetch attempt 1 at 8:56:05 AM
+npm info attempt registry request try #1 at 8:56:05 AM
+npm http fetch GET https://registry.npmjs.org/isarray/-/isarray-0.0.1.tgz
+npm info attempt registry request try #1 at 8:56:05 AM
+npm http request GET https://registry.npmjs.org/ms
+npm http fetch 200 https://registry.npmjs.org/xtend/-/xtend-4.0.1.tgz
+npm info install isarray@1.0.0 into /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/readable-stream
+npm info install core-util-is@1.0.2 into /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/readable-stream
+npm info install process-nextick-args@1.0.7 into /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/readable-stream
+npm info install string_decoder@0.10.31 into /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/readable-stream
+npm info install util-deprecate@1.0.2 into /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/readable-stream
+npm info installOne isarray@1.0.0
+npm info installOne core-util-is@1.0.2
+npm info installOne process-nextick-args@1.0.7
+npm info installOne string_decoder@0.10.31
+npm info installOne util-deprecate@1.0.2
+npm http fetch 200 https://registry.npmjs.org/end-of-stream/-/end-of-stream-1.4.0.tgz
+npm http fetch 200 https://registry.npmjs.org/bl/-/bl-1.2.1.tgz
+npm http fetch 200 https://registry.npmjs.org/once/-/once-1.4.0.tgz
+npm http 200 https://registry.npmjs.org/minimist
+npm http fetch 200 https://registry.npmjs.org/isarray/-/isarray-0.0.1.tgz
+npm info install readable-stream@2.2.9 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream
+npm info install xtend@4.0.1 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream
+npm info install end-of-stream@1.4.0 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream
+npm info install bl@1.2.1 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream
+npm info installOne readable-stream@2.2.9
+npm info installOne xtend@4.0.1
+npm info installOne end-of-stream@1.4.0
+npm info installOne bl@1.2.1
+npm info retry fetch attempt 1 at 8:56:05 AM
+npm info attempt registry request try #1 at 8:56:05 AM
+npm http fetch GET https://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz
+npm http 200 https://registry.npmjs.org/ms
+npm info install end-of-stream@1.4.0 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/pump
+npm info install once@1.4.0 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/pump
+npm info installOne end-of-stream@1.4.0
+npm info installOne once@1.4.0
+npm info install core-util-is@1.0.2 into /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/readable-stream
+npm info install string_decoder@0.10.31 into /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/readable-stream
+npm info install inherits@2.0.3 into /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/readable-stream
+npm info install isarray@0.0.1 into /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/readable-stream
+npm info installOne core-util-is@1.0.2
+npm info installOne string_decoder@0.10.31
+npm info installOne inherits@2.0.3
+npm info installOne isarray@0.0.1
+npm info retry fetch attempt 1 at 8:56:05 AM
+npm info attempt registry request try #1 at 8:56:05 AM
+npm http fetch GET https://registry.npmjs.org/ms/-/ms-0.7.3.tgz
+npm info preinstall string_decoder@0.10.31
+npm info preinstall process-nextick-args@1.0.7
+npm info preinstall util-deprecate@1.0.2
+npm info preinstall core-util-is@1.0.2
+npm info preinstall end-of-stream@1.4.0
+npm info preinstall isarray@1.0.0
+npm info build /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/readable-stream/node_modules/string_decoder
+npm http fetch 200 https://registry.npmjs.org/ms/-/ms-0.7.3.tgz
+npm info build /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/readable-stream/node_modules/process-nextick-args
+npm info build /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/readable-stream/node_modules/util-deprecate
+npm info linkStuff string_decoder@0.10.31
+npm info preinstall end-of-stream@1.4.0
+npm info preinstall once@1.4.0
+npm info build /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/readable-stream/node_modules/core-util-is
+npm info install string_decoder@0.10.31
+npm info postinstall string_decoder@0.10.31
+npm info preinstall string_decoder@0.10.31
+npm info linkStuff process-nextick-args@1.0.7
+npm info linkStuff util-deprecate@1.0.2
+npm info preinstall inherits@2.0.3
+npm info preinstall isarray@0.0.1
+npm info linkStuff core-util-is@1.0.2
+npm info preinstall JSONStream@0.10.0
+npm info build /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/readable-stream/node_modules/isarray
+npm info install process-nextick-args@1.0.7
+npm info install util-deprecate@1.0.2
+npm info install core-util-is@1.0.2
+npm info postinstall process-nextick-args@1.0.7
+npm info postinstall util-deprecate@1.0.2
+npm info postinstall core-util-is@1.0.2
+npm info preinstall core-util-is@1.0.2
+npm http fetch 200 https://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/readable-stream/node_modules/string_decoder
+npm info linkStuff isarray@1.0.0
+npm info preinstall bl@1.2.1
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/readable-stream/node_modules/inherits
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/pump/node_modules/end-of-stream
+npm info attempt registry request try #1 at 8:56:06 AM
+npm http request GET https://registry.npmjs.org/wrappy
+npm info linkStuff string_decoder@0.10.31
+npm info linkStuff inherits@2.0.3
+npm info install isarray@1.0.0
+npm info preinstall xtend@4.0.1
+npm info install once@1.4.0 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/end-of-stream
+npm info installOne once@1.4.0
+npm info postinstall isarray@1.0.0
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/readable-stream/node_modules/core-util-is
+npm info install string_decoder@0.10.31
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/readable-stream/node_modules/isarray
+npm info build /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/readable-stream
+npm info linkStuff end-of-stream@1.4.0
+npm info install inherits@2.0.3
+npm info install ms@0.7.3 into /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/debug
+npm info installOne ms@0.7.3
+npm info postinstall string_decoder@0.10.31
+npm info postinstall inherits@2.0.3
+npm info linkStuff core-util-is@1.0.2
+npm info install end-of-stream@1.4.0
+npm info attempt registry request try #1 at 8:56:06 AM
+npm http request GET https://registry.npmjs.org/jsonparse
+npm info attempt registry request try #1 at 8:56:06 AM
+npm http request GET https://registry.npmjs.org/through
+npm info postinstall end-of-stream@1.4.0
+npm info linkStuff isarray@0.0.1
+npm info linkStuff readable-stream@2.0.6
+npm info install core-util-is@1.0.2
+npm info install minimist@0.0.8 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/mkdirp
+npm info installOne minimist@0.0.8
+npm info postinstall core-util-is@1.0.2
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/bl
+npm info install isarray@0.0.1
+npm info install readable-stream@2.0.6
+npm http 200 https://registry.npmjs.org/wrappy
+npm info postinstall isarray@0.0.1
+npm info postinstall readable-stream@2.0.6
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/xtend
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/readable-stream
+npm info build /opt/app/node_modules/dockerode/node_modules/concat-stream
+npm info linkStuff bl@1.2.1
+npm info linkStuff xtend@4.0.1
+npm info install bl@1.2.1
+npm info linkStuff readable-stream@1.0.34
+npm info retry fetch attempt 1 at 8:56:06 AM
+npm info attempt registry request try #1 at 8:56:06 AM
+npm http fetch GET https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz
+npm info linkStuff concat-stream@1.5.2
+npm info postinstall bl@1.2.1
+npm info install xtend@4.0.1
+npm info install readable-stream@1.0.34
+npm info install concat-stream@1.5.2
+npm info postinstall xtend@4.0.1
+npm info postinstall readable-stream@1.0.34
+npm info postinstall concat-stream@1.5.2
+npm info preinstall once@1.4.0
+npm info preinstall ms@0.7.3
+npm http 200 https://registry.npmjs.org/jsonparse
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/debug/node_modules/ms
+npm http 200 https://registry.npmjs.org/through
+npm info retry fetch attempt 1 at 8:56:06 AM
+npm info attempt registry request try #1 at 8:56:06 AM
+npm http fetch GET https://registry.npmjs.org/jsonparse/-/jsonparse-0.0.5.tgz
+npm info linkStuff ms@0.7.3
+npm info install ms@0.7.3
+npm info retry fetch attempt 1 at 8:56:06 AM
+npm info attempt registry request try #1 at 8:56:06 AM
+npm http fetch GET https://registry.npmjs.org/through/-/through-2.3.8.tgz
+npm info postinstall ms@0.7.3
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/debug
+npm info linkStuff debug@2.6.6
+npm info install debug@2.6.6
+npm info postinstall debug@2.6.6
+npm http fetch 200 https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz
+npm info preinstall readable-stream@2.2.9
+npm info install wrappy@1.0.2 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/pump/node_modules/once
+npm info installOne wrappy@1.0.2
+npm info install wrappy@1.0.2 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/end-of-stream/node_modules/once
+npm info installOne wrappy@1.0.2
+npm info attempt registry request try #1 at 8:56:06 AM
+npm http request GET https://registry.npmjs.org/buffer-shims
+npm info preinstall minimist@0.0.8
+npm info retry fetch attempt 1 at 8:56:06 AM
+npm info attempt registry request try #1 at 8:56:06 AM
+npm http fetch GET https://registry.npmjs.org/string_decoder/-/string_decoder-1.0.0.tgz
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/mkdirp/node_modules/minimist
+npm info linkStuff minimist@0.0.8
+npm info install minimist@0.0.8
+npm info postinstall minimist@0.0.8
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/mkdirp
+npm info linkStuff mkdirp@0.5.1
+npm info preinstall wrappy@1.0.2
+npm info preinstall wrappy@1.0.2
+npm info install mkdirp@0.5.1
+npm info postinstall mkdirp@0.5.1
+npm http fetch 200 https://registry.npmjs.org/jsonparse/-/jsonparse-0.0.5.tgz
+npm http fetch 200 https://registry.npmjs.org/through/-/through-2.3.8.tgz
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/pump/node_modules/once/node_modules/wrappy
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/end-of-stream/node_modules/once/node_modules/wrappy
+npm info linkStuff wrappy@1.0.2
+npm info linkStuff wrappy@1.0.2
+npm info install wrappy@1.0.2
+npm info install wrappy@1.0.2
+npm info install jsonparse@0.0.5 into /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/JSONStream
+npm info install through@2.3.8 into /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/JSONStream
+npm info installOne jsonparse@0.0.5
+npm info installOne through@2.3.8
+npm info postinstall wrappy@1.0.2
+npm info postinstall wrappy@1.0.2
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/pump/node_modules/once
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/end-of-stream/node_modules/once
+npm info linkStuff once@1.4.0
+npm info linkStuff once@1.4.0
+npm info install once@1.4.0
+npm info postinstall once@1.4.0
+npm info install once@1.4.0
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/end-of-stream
+npm info postinstall once@1.4.0
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/pump
+npm info linkStuff end-of-stream@1.4.0
+npm info linkStuff pump@1.0.2
+npm info install end-of-stream@1.4.0
+npm info postinstall end-of-stream@1.4.0
+npm info install pump@1.0.2
+npm info postinstall pump@1.0.2
+npm http 200 https://registry.npmjs.org/buffer-shims
+npm info preinstall through@2.3.8
+npm info preinstall jsonparse@0.0.5
+npm info retry fetch attempt 1 at 8:56:06 AM
+npm info attempt registry request try #1 at 8:56:06 AM
+npm http fetch GET https://registry.npmjs.org/buffer-shims/-/buffer-shims-1.0.0.tgz
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/JSONStream/node_modules/through
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/JSONStream/node_modules/jsonparse
+npm info linkStuff through@2.3.8
+npm info linkStuff jsonparse@0.0.5
+npm info install through@2.3.8
+npm info postinstall through@2.3.8
+npm info install jsonparse@0.0.5
+npm info postinstall jsonparse@0.0.5
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/JSONStream
+npm info linkStuff JSONStream@0.10.0
+npm info install JSONStream@0.10.0
+npm info postinstall JSONStream@0.10.0
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem
+npm info linkStuff docker-modem@0.3.7
+npm info install docker-modem@0.3.7
+npm info postinstall docker-modem@0.3.7
+npm http fetch 200 https://registry.npmjs.org/string_decoder/-/string_decoder-1.0.0.tgz
+npm http fetch 200 https://registry.npmjs.org/buffer-shims/-/buffer-shims-1.0.0.tgz
+npm info install core-util-is@1.0.2 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream
+npm info install isarray@1.0.0 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream
+npm info install inherits@2.0.3 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream
+npm info install process-nextick-args@1.0.7 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream
+npm info install util-deprecate@1.0.2 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream
+npm info install string_decoder@1.0.0 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream
+npm info install buffer-shims@1.0.0 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream
+npm info installOne core-util-is@1.0.2
+npm info installOne isarray@1.0.0
+npm info installOne inherits@2.0.3
+npm info installOne process-nextick-args@1.0.7
+npm info installOne util-deprecate@1.0.2
+npm info installOne string_decoder@1.0.0
+npm info installOne buffer-shims@1.0.0
+npm info preinstall buffer-shims@1.0.0
+npm info preinstall inherits@2.0.3
+npm info preinstall string_decoder@1.0.0
+npm info preinstall process-nextick-args@1.0.7
+npm info preinstall util-deprecate@1.0.2
+npm info preinstall core-util-is@1.0.2
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream/node_modules/inherits
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream/node_modules/buffer-shims
+npm info linkStuff inherits@2.0.3
+npm info preinstall isarray@1.0.0
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream/node_modules/process-nextick-args
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream/node_modules/util-deprecate
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream/node_modules/core-util-is
+npm info linkStuff buffer-shims@1.0.0
+npm info install inherits@2.0.3
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream/node_modules/string_decoder
+npm info postinstall inherits@2.0.3
+npm info linkStuff process-nextick-args@1.0.7
+npm info linkStuff util-deprecate@1.0.2
+npm info linkStuff core-util-is@1.0.2
+npm info install buffer-shims@1.0.0
+npm info postinstall buffer-shims@1.0.0
+npm info install process-nextick-args@1.0.7
+npm info install util-deprecate@1.0.2
+npm info install core-util-is@1.0.2
+npm info postinstall process-nextick-args@1.0.7
+npm info postinstall util-deprecate@1.0.2
+npm info linkStuff string_decoder@1.0.0
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream/node_modules/isarray
+npm info postinstall core-util-is@1.0.2
+npm info linkStuff isarray@1.0.0
+npm info install string_decoder@1.0.0
+npm info postinstall string_decoder@1.0.0
+npm info install isarray@1.0.0
+npm info postinstall isarray@1.0.0
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream
+npm info linkStuff readable-stream@2.2.9
+npm info install readable-stream@2.2.9
+npm info postinstall readable-stream@2.2.9
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream
+npm info linkStuff tar-stream@1.5.2
+npm info install tar-stream@1.5.2
+npm info postinstall tar-stream@1.5.2
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs
+npm info linkStuff tar-fs@1.12.0
+npm info install tar-fs@1.12.0
+npm info postinstall tar-fs@1.12.0
+npm info build /opt/app/node_modules/dockerode
+npm info linkStuff dockerode@2.4.3
+npm info install dockerode@2.4.3
+npm info postinstall dockerode@2.4.3
+npm info preinstall lodash@4.17.4
+npm info build /opt/app/node_modules/async/node_modules/lodash
+npm info linkStuff lodash@4.17.4
+npm info install lodash@4.17.4
+npm info postinstall lodash@4.17.4
+npm info build /opt/app/node_modules/async
+npm info linkStuff async@2.4.0
+npm info install async@2.4.0
+npm info postinstall async@2.4.0
+npm info build /opt/app
+npm info linkStuff music-validation@1.0.0
+npm info install music-validation@1.0.0
+npm info postinstall music-validation@1.0.0
+npm info prepublish music-validation@1.0.0
+chance@1.0.8 node_modules/chance
+
+chai@3.5.0 node_modules/chai
+├── assertion-error@1.0.2
+├── type-detect@1.0.0
+└── deep-eql@0.1.3 (type-detect@0.1.1)
+
+dockerode@2.4.3 node_modules/dockerode
+├── concat-stream@1.5.2 (inherits@2.0.3, typedarray@0.0.6, readable-stream@2.0.6)
+├── docker-modem@0.3.7 (split-ca@1.0.1, readable-stream@1.0.34, debug@2.6.6, JSONStream@0.10.0)
+└── tar-fs@1.12.0 (mkdirp@0.5.1, pump@1.0.2, tar-stream@1.5.2)
+
+async@2.4.0 node_modules/async
+└── lodash@4.17.4
+npm info ok
+ ---> 7af3086cfbb0
+Removing intermediate container 780ec5614d42
+Step 6/6 : CMD node /opt/app/musician.js
+ ---> Running in 9c4f694bf4d5
+ ---> 39989b49b935
+Removing intermediate container 9c4f694bf4d5
+Successfully built 39989b49b935
+SECURITY WARNING: You are building a Docker image from Windows against a non-Windows Docker host. All files and directories added to build context will have '-rwxr-xr-x' permissions. It is recommended to double check and reset permissions for sensitive files and directories.
+Sending build context to Docker daemon  8.704kB
+Step 1/6 : FROM node:4.3.1
+ ---> ddb7a7253258
+Step 2/6 : MAINTAINER Abass Mahdavi <abass.mahdavi@heig-vd.ch>
+ ---> Using cache
+ ---> 4f2b4e515e75
+Step 3/6 : COPY src /opt/app/
+ ---> 4a50e5638f4c
+Removing intermediate container 6c1a930e2ff5
+Step 4/6 : WORKDIR /opt/app/
+ ---> af1e23122f16
+Removing intermediate container 5ed2a8065c3b
+Step 5/6 : RUN npm install
+ ---> Running in 63ce91d2000b
+npm info it worked if it ends with ok
+npm info using npm@2.14.12
+npm info using node@v4.3.1
+npm WARN package.json music-validation@1.0.0 No description
+npm WARN package.json music-validation@1.0.0 No repository field.
+npm WARN package.json music-validation@1.0.0 No README data
+npm info preinstall music-validation@1.0.0
+npm info attempt registry request try #1 at 8:56:09 AM
+npm http request GET https://registry.npmjs.org/chance
+npm info attempt registry request try #1 at 8:56:09 AM
+npm http request GET https://registry.npmjs.org/dockerode
+npm info attempt registry request try #1 at 8:56:09 AM
+npm http request GET https://registry.npmjs.org/async
+npm info attempt registry request try #1 at 8:56:09 AM
+npm http request GET https://registry.npmjs.org/chai
+npm http 200 https://registry.npmjs.org/dockerode
+npm info retry fetch attempt 1 at 8:56:09 AM
+npm info attempt registry request try #1 at 8:56:09 AM
+npm http fetch GET https://registry.npmjs.org/dockerode/-/dockerode-2.4.3.tgz
+npm http 200 https://registry.npmjs.org/async
+npm http 200 https://registry.npmjs.org/chai
+npm info retry fetch attempt 1 at 8:56:09 AM
+npm info attempt registry request try #1 at 8:56:09 AM
+npm http fetch GET https://registry.npmjs.org/async/-/async-2.4.0.tgz
+npm info retry fetch attempt 1 at 8:56:09 AM
+npm info attempt registry request try #1 at 8:56:09 AM
+npm http fetch GET https://registry.npmjs.org/chai/-/chai-3.5.0.tgz
+npm http 200 https://registry.npmjs.org/chance
+npm info retry fetch attempt 1 at 8:56:09 AM
+npm info attempt registry request try #1 at 8:56:09 AM
+npm http fetch GET https://registry.npmjs.org/chance/-/chance-1.0.8.tgz
+npm http fetch 200 https://registry.npmjs.org/dockerode/-/dockerode-2.4.3.tgz
+npm http fetch 200 https://registry.npmjs.org/async/-/async-2.4.0.tgz
+npm http fetch 200 https://registry.npmjs.org/chai/-/chai-3.5.0.tgz
+npm http fetch 200 https://registry.npmjs.org/chance/-/chance-1.0.8.tgz
+npm info install dockerode@2.4.3 into /opt/app
+npm info install async@2.4.0 into /opt/app
+npm info install chai@3.5.0 into /opt/app
+npm info install chance@1.0.8 into /opt/app
+npm info installOne dockerode@2.4.3
+npm info installOne async@2.4.0
+npm info installOne chai@3.5.0
+npm info installOne chance@1.0.8
+npm info preinstall dockerode@2.4.3
+npm info attempt registry request try #1 at 8:56:11 AM
+npm http request GET https://registry.npmjs.org/tar-fs
+npm info attempt registry request try #1 at 8:56:11 AM
+npm http request GET https://registry.npmjs.org/concat-stream
+npm info attempt registry request try #1 at 8:56:11 AM
+npm http request GET https://registry.npmjs.org/docker-modem
+npm http 200 https://registry.npmjs.org/concat-stream
+npm info retry fetch attempt 1 at 8:56:11 AM
+npm info attempt registry request try #1 at 8:56:11 AM
+npm http fetch GET https://registry.npmjs.org/concat-stream/-/concat-stream-1.5.2.tgz
+npm http 200 https://registry.npmjs.org/tar-fs
+npm http 200 https://registry.npmjs.org/docker-modem
+npm info retry fetch attempt 1 at 8:56:11 AM
+npm info attempt registry request try #1 at 8:56:11 AM
+npm http fetch GET https://registry.npmjs.org/tar-fs/-/tar-fs-1.12.0.tgz
+npm info retry fetch attempt 1 at 8:56:11 AM
+npm info attempt registry request try #1 at 8:56:11 AM
+npm http fetch GET https://registry.npmjs.org/docker-modem/-/docker-modem-0.3.7.tgz
+npm info preinstall chai@3.5.0
+npm http fetch 200 https://registry.npmjs.org/concat-stream/-/concat-stream-1.5.2.tgz
+npm info attempt registry request try #1 at 8:56:11 AM
+npm http request GET https://registry.npmjs.org/assertion-error
+npm info attempt registry request try #1 at 8:56:11 AM
+npm http request GET https://registry.npmjs.org/deep-eql
+npm info attempt registry request try #1 at 8:56:11 AM
+npm http request GET https://registry.npmjs.org/type-detect
+npm http fetch 200 https://registry.npmjs.org/docker-modem/-/docker-modem-0.3.7.tgz
+npm info preinstall chance@1.0.8
+npm http fetch 200 https://registry.npmjs.org/tar-fs/-/tar-fs-1.12.0.tgz
+npm info build /opt/app/node_modules/chance
+npm info linkStuff chance@1.0.8
+npm info install chance@1.0.8
+npm info postinstall chance@1.0.8
+npm info install concat-stream@1.5.2 into /opt/app/node_modules/dockerode
+npm info install docker-modem@0.3.7 into /opt/app/node_modules/dockerode
+npm info install tar-fs@1.12.0 into /opt/app/node_modules/dockerode
+npm info installOne concat-stream@1.5.2
+npm info installOne docker-modem@0.3.7
+npm info installOne tar-fs@1.12.0
+npm http 200 https://registry.npmjs.org/assertion-error
+npm http 200 https://registry.npmjs.org/deep-eql
+npm info retry fetch attempt 1 at 8:56:11 AM
+npm info attempt registry request try #1 at 8:56:11 AM
+npm http fetch GET https://registry.npmjs.org/assertion-error/-/assertion-error-1.0.2.tgz
+npm info retry fetch attempt 1 at 8:56:11 AM
+npm info attempt registry request try #1 at 8:56:11 AM
+npm http fetch GET https://registry.npmjs.org/deep-eql/-/deep-eql-0.1.3.tgz
+npm http 200 https://registry.npmjs.org/type-detect
+npm info preinstall concat-stream@1.5.2
+npm info retry fetch attempt 1 at 8:56:11 AM
+npm info attempt registry request try #1 at 8:56:11 AM
+npm http fetch GET https://registry.npmjs.org/type-detect/-/type-detect-1.0.0.tgz
+npm info attempt registry request try #1 at 8:56:11 AM
+npm http request GET https://registry.npmjs.org/inherits
+npm info attempt registry request try #1 at 8:56:11 AM
+npm http request GET https://registry.npmjs.org/typedarray
+npm info attempt registry request try #1 at 8:56:11 AM
+npm http request GET https://registry.npmjs.org/readable-stream
+npm http fetch 200 https://registry.npmjs.org/assertion-error/-/assertion-error-1.0.2.tgz
+npm info preinstall docker-modem@0.3.7
+npm http fetch 200 https://registry.npmjs.org/deep-eql/-/deep-eql-0.1.3.tgz
+npm info attempt registry request try #1 at 8:56:11 AM
+npm http request GET https://registry.npmjs.org/JSONStream
+npm info attempt registry request try #1 at 8:56:11 AM
+npm http request GET https://registry.npmjs.org/debug
+npm info attempt registry request try #1 at 8:56:11 AM
+npm http request GET https://registry.npmjs.org/split-ca
+npm http fetch 200 https://registry.npmjs.org/type-detect/-/type-detect-1.0.0.tgz
+npm http 200 https://registry.npmjs.org/inherits
+npm info retry fetch attempt 1 at 8:56:11 AM
+npm info attempt registry request try #1 at 8:56:11 AM
+npm http fetch GET https://registry.npmjs.org/inherits/-/inherits-2.0.3.tgz
+npm http 200 https://registry.npmjs.org/typedarray
+npm info install assertion-error@1.0.2 into /opt/app/node_modules/chai
+npm info install deep-eql@0.1.3 into /opt/app/node_modules/chai
+npm info install type-detect@1.0.0 into /opt/app/node_modules/chai
+npm info installOne assertion-error@1.0.2
+npm info installOne deep-eql@0.1.3
+npm info installOne type-detect@1.0.0
+npm http 200 https://registry.npmjs.org/readable-stream
+npm info retry fetch attempt 1 at 8:56:11 AM
+npm info attempt registry request try #1 at 8:56:11 AM
+npm http fetch GET https://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz
+npm http 200 https://registry.npmjs.org/split-ca
+npm http fetch 200 https://registry.npmjs.org/inherits/-/inherits-2.0.3.tgz
+npm info retry fetch attempt 1 at 8:56:12 AM
+npm info attempt registry request try #1 at 8:56:12 AM
+npm http fetch GET https://registry.npmjs.org/readable-stream/-/readable-stream-2.0.6.tgz
+npm info retry fetch attempt 1 at 8:56:12 AM
+npm info attempt registry request try #1 at 8:56:12 AM
+npm http fetch GET https://registry.npmjs.org/readable-stream/-/readable-stream-1.0.34.tgz
+npm http 200 https://registry.npmjs.org/JSONStream
+npm http 200 https://registry.npmjs.org/debug
+npm info retry fetch attempt 1 at 8:56:12 AM
+npm info attempt registry request try #1 at 8:56:12 AM
+npm http fetch GET https://registry.npmjs.org/split-ca/-/split-ca-1.0.1.tgz
+npm http fetch 200 https://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz
+npm info retry fetch attempt 1 at 8:56:12 AM
+npm info attempt registry request try #1 at 8:56:12 AM
+npm http fetch GET https://registry.npmjs.org/JSONStream/-/JSONStream-0.10.0.tgz
+npm info preinstall tar-fs@1.12.0
+npm info retry fetch attempt 1 at 8:56:12 AM
+npm info attempt registry request try #1 at 8:56:12 AM
+npm http fetch GET https://registry.npmjs.org/debug/-/debug-2.6.6.tgz
+npm http fetch 200 https://registry.npmjs.org/readable-stream/-/readable-stream-2.0.6.tgz
+npm info attempt registry request try #1 at 8:56:12 AM
+npm http request GET https://registry.npmjs.org/mkdirp
+npm info attempt registry request try #1 at 8:56:12 AM
+npm http request GET https://registry.npmjs.org/pump
+npm info attempt registry request try #1 at 8:56:12 AM
+npm http request GET https://registry.npmjs.org/tar-stream
+npm http fetch 200 https://registry.npmjs.org/readable-stream/-/readable-stream-1.0.34.tgz
+npm info preinstall assertion-error@1.0.2
+npm info preinstall deep-eql@0.1.3
+npm info preinstall type-detect@1.0.0
+npm info build /opt/app/node_modules/chai/node_modules/assertion-error
+npm info linkStuff assertion-error@1.0.2
+npm info install assertion-error@1.0.2
+npm info postinstall assertion-error@1.0.2
+npm info build /opt/app/node_modules/chai/node_modules/type-detect
+npm info retry fetch attempt 1 at 8:56:12 AM
+npm info attempt registry request try #1 at 8:56:12 AM
+npm http fetch GET https://registry.npmjs.org/type-detect/-/type-detect-0.1.1.tgz
+npm info linkStuff type-detect@1.0.0
+npm http fetch 200 https://registry.npmjs.org/split-ca/-/split-ca-1.0.1.tgz
+npm info install type-detect@1.0.0
+npm info postinstall type-detect@1.0.0
+npm http fetch 200 https://registry.npmjs.org/debug/-/debug-2.6.6.tgz
+npm info install inherits@2.0.3 into /opt/app/node_modules/dockerode/node_modules/concat-stream
+npm info install typedarray@0.0.6 into /opt/app/node_modules/dockerode/node_modules/concat-stream
+npm info install readable-stream@2.0.6 into /opt/app/node_modules/dockerode/node_modules/concat-stream
+npm info installOne inherits@2.0.3
+npm info installOne typedarray@0.0.6
+npm info installOne readable-stream@2.0.6
+npm http fetch 200 https://registry.npmjs.org/JSONStream/-/JSONStream-0.10.0.tgz
+npm info preinstall typedarray@0.0.6
+npm info preinstall inherits@2.0.3
+npm info build /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/typedarray
+npm http 200 https://registry.npmjs.org/pump
+npm info linkStuff typedarray@0.0.6
+npm info build /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/inherits
+npm info install typedarray@0.0.6
+npm info preinstall async@2.4.0
+npm info retry fetch attempt 1 at 8:56:12 AM
+npm info attempt registry request try #1 at 8:56:12 AM
+npm http fetch GET https://registry.npmjs.org/pump/-/pump-1.0.2.tgz
+npm info postinstall typedarray@0.0.6
+npm http 200 https://registry.npmjs.org/mkdirp
+npm info linkStuff inherits@2.0.3
+npm http 200 https://registry.npmjs.org/tar-stream
+npm info install inherits@2.0.3
+npm info postinstall inherits@2.0.3
+npm info retry fetch attempt 1 at 8:56:12 AM
+npm info attempt registry request try #1 at 8:56:12 AM
+npm http fetch GET https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.1.tgz
+npm info retry fetch attempt 1 at 8:56:12 AM
+npm info attempt registry request try #1 at 8:56:12 AM
+npm http fetch GET https://registry.npmjs.org/tar-stream/-/tar-stream-1.5.2.tgz
+npm info attempt registry request try #1 at 8:56:12 AM
+npm http request GET https://registry.npmjs.org/lodash
+npm info preinstall readable-stream@2.0.6
+npm info attempt registry request try #1 at 8:56:12 AM
+npm http request GET https://registry.npmjs.org/core-util-is
+npm info attempt registry request try #1 at 8:56:12 AM
+npm http request GET https://registry.npmjs.org/isarray
+npm info attempt registry request try #1 at 8:56:12 AM
+npm http request GET https://registry.npmjs.org/process-nextick-args
+npm info attempt registry request try #1 at 8:56:12 AM
+npm http request GET https://registry.npmjs.org/string_decoder
+npm info attempt registry request try #1 at 8:56:12 AM
+npm http request GET https://registry.npmjs.org/util-deprecate
+npm http fetch 200 https://registry.npmjs.org/type-detect/-/type-detect-0.1.1.tgz
+npm info install type-detect@0.1.1 into /opt/app/node_modules/chai/node_modules/deep-eql
+npm info installOne type-detect@0.1.1
+npm info preinstall type-detect@0.1.1
+npm info build /opt/app/node_modules/chai/node_modules/deep-eql/node_modules/type-detect
+npm info linkStuff type-detect@0.1.1
+npm info install type-detect@0.1.1
+npm info postinstall type-detect@0.1.1
+npm info build /opt/app/node_modules/chai/node_modules/deep-eql
+npm info linkStuff deep-eql@0.1.3
+npm info install deep-eql@0.1.3
+npm http fetch 200 https://registry.npmjs.org/pump/-/pump-1.0.2.tgz
+npm info postinstall deep-eql@0.1.3
+npm info build /opt/app/node_modules/chai
+npm info linkStuff chai@3.5.0
+npm info install chai@3.5.0
+npm info postinstall chai@3.5.0
+npm info install readable-stream@1.0.34 into /opt/app/node_modules/dockerode/node_modules/docker-modem
+npm info install split-ca@1.0.1 into /opt/app/node_modules/dockerode/node_modules/docker-modem
+npm info install debug@2.6.6 into /opt/app/node_modules/dockerode/node_modules/docker-modem
+npm info install JSONStream@0.10.0 into /opt/app/node_modules/dockerode/node_modules/docker-modem
+npm info installOne readable-stream@1.0.34
+npm info installOne split-ca@1.0.1
+npm info installOne debug@2.6.6
+npm info installOne JSONStream@0.10.0
+npm http fetch 200 https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.1.tgz
+npm http fetch 200 https://registry.npmjs.org/tar-stream/-/tar-stream-1.5.2.tgz
+npm http 200 https://registry.npmjs.org/core-util-is
+npm http 200 https://registry.npmjs.org/process-nextick-args
+npm info retry fetch attempt 1 at 8:56:12 AM
+npm info attempt registry request try #1 at 8:56:12 AM
+npm http fetch GET https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.2.tgz
+npm info retry fetch attempt 1 at 8:56:12 AM
+npm info attempt registry request try #1 at 8:56:12 AM
+npm http fetch GET https://registry.npmjs.org/process-nextick-args/-/process-nextick-args-1.0.7.tgz
+npm info install pump@1.0.2 into /opt/app/node_modules/dockerode/node_modules/tar-fs
+npm info install mkdirp@0.5.1 into /opt/app/node_modules/dockerode/node_modules/tar-fs
+npm info install tar-stream@1.5.2 into /opt/app/node_modules/dockerode/node_modules/tar-fs
+npm info installOne pump@1.0.2
+npm info installOne mkdirp@0.5.1
+npm info installOne tar-stream@1.5.2
+npm http 200 https://registry.npmjs.org/lodash
+npm http 200 https://registry.npmjs.org/string_decoder
+npm http 200 https://registry.npmjs.org/util-deprecate
+npm info retry fetch attempt 1 at 8:56:12 AM
+npm info attempt registry request try #1 at 8:56:12 AM
+npm http fetch GET https://registry.npmjs.org/lodash/-/lodash-4.17.4.tgz
+npm info retry fetch attempt 1 at 8:56:12 AM
+npm info attempt registry request try #1 at 8:56:12 AM
+npm http fetch GET https://registry.npmjs.org/string_decoder/-/string_decoder-0.10.31.tgz
+npm info retry fetch attempt 1 at 8:56:12 AM
+npm info attempt registry request try #1 at 8:56:12 AM
+npm http fetch GET https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz
+npm info preinstall tar-stream@1.5.2
+npm info preinstall pump@1.0.2
+npm info preinstall split-ca@1.0.1
+npm http fetch 200 https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.2.tgz
+npm http fetch 200 https://registry.npmjs.org/process-nextick-args/-/process-nextick-args-1.0.7.tgz
+npm info preinstall readable-stream@1.0.34
+npm http fetch 200 https://registry.npmjs.org/lodash/-/lodash-4.17.4.tgz
+npm info attempt registry request try #1 at 8:56:13 AM
+npm http request GET https://registry.npmjs.org/bl
+npm info attempt registry request try #1 at 8:56:13 AM
+npm http request GET https://registry.npmjs.org/end-of-stream
+npm info attempt registry request try #1 at 8:56:13 AM
+npm http request GET https://registry.npmjs.org/xtend
+npm info retry fetch attempt 1 at 8:56:13 AM
+npm info attempt registry request try #1 at 8:56:13 AM
+npm http fetch GET https://registry.npmjs.org/readable-stream/-/readable-stream-2.2.9.tgz
+npm info attempt registry request try #1 at 8:56:13 AM
+npm http request GET https://registry.npmjs.org/once
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/split-ca
+npm http fetch 200 https://registry.npmjs.org/string_decoder/-/string_decoder-0.10.31.tgz
+npm info preinstall debug@2.6.6
+npm http fetch 200 https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz
+npm http 200 https://registry.npmjs.org/isarray
+npm info linkStuff split-ca@1.0.1
+npm info install split-ca@1.0.1
+npm info retry fetch attempt 1 at 8:56:13 AM
+npm info attempt registry request try #1 at 8:56:13 AM
+npm http fetch GET https://registry.npmjs.org/isarray/-/isarray-1.0.0.tgz
+npm info postinstall split-ca@1.0.1
+npm info retry fetch attempt 1 at 8:56:13 AM
+npm info attempt registry request try #1 at 8:56:13 AM
+npm http fetch GET https://registry.npmjs.org/isarray/-/isarray-0.0.1.tgz
+npm info retry fetch attempt 1 at 8:56:13 AM
+npm info attempt registry request try #1 at 8:56:13 AM
+npm http fetch GET https://registry.npmjs.org/string_decoder/-/string_decoder-0.10.31.tgz
+npm info attempt registry request try #1 at 8:56:13 AM
+npm http request GET https://registry.npmjs.org/ms
+npm http 200 https://registry.npmjs.org/end-of-stream
+npm http 200 https://registry.npmjs.org/bl
+npm info retry fetch attempt 1 at 8:56:13 AM
+npm info attempt registry request try #1 at 8:56:13 AM
+npm http fetch GET https://registry.npmjs.org/end-of-stream/-/end-of-stream-1.4.0.tgz
+npm info retry fetch attempt 1 at 8:56:13 AM
+npm info attempt registry request try #1 at 8:56:13 AM
+npm http fetch GET https://registry.npmjs.org/bl/-/bl-1.2.1.tgz
+npm http 200 https://registry.npmjs.org/xtend
+npm http 200 https://registry.npmjs.org/once
+npm info retry fetch attempt 1 at 8:56:13 AM
+npm info attempt registry request try #1 at 8:56:13 AM
+npm http fetch GET https://registry.npmjs.org/xtend/-/xtend-4.0.1.tgz
+npm info retry fetch attempt 1 at 8:56:13 AM
+npm info attempt registry request try #1 at 8:56:13 AM
+npm http fetch GET https://registry.npmjs.org/once/-/once-1.4.0.tgz
+npm http fetch 200 https://registry.npmjs.org/readable-stream/-/readable-stream-2.2.9.tgz
+npm info preinstall mkdirp@0.5.1
+npm info attempt registry request try #1 at 8:56:13 AM
+npm http request GET https://registry.npmjs.org/minimist
+npm info preinstall JSONStream@0.10.0
+npm info attempt registry request try #1 at 8:56:13 AM
+npm http request GET https://registry.npmjs.org/jsonparse
+npm info attempt registry request try #1 at 8:56:13 AM
+npm http request GET https://registry.npmjs.org/through
+npm http fetch 200 https://registry.npmjs.org/isarray/-/isarray-1.0.0.tgz
+npm http fetch 200 https://registry.npmjs.org/isarray/-/isarray-0.0.1.tgz
+npm info install core-util-is@1.0.2 into /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/readable-stream
+npm info install process-nextick-args@1.0.7 into /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/readable-stream
+npm info install string_decoder@0.10.31 into /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/readable-stream
+npm info install util-deprecate@1.0.2 into /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/readable-stream
+npm info install isarray@1.0.0 into /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/readable-stream
+npm info installOne core-util-is@1.0.2
+npm info installOne process-nextick-args@1.0.7
+npm info installOne string_decoder@0.10.31
+npm info installOne util-deprecate@1.0.2
+npm info installOne isarray@1.0.0
+npm http fetch 200 https://registry.npmjs.org/string_decoder/-/string_decoder-0.10.31.tgz
+npm http fetch 200 https://registry.npmjs.org/end-of-stream/-/end-of-stream-1.4.0.tgz
+npm http fetch 200 https://registry.npmjs.org/xtend/-/xtend-4.0.1.tgz
+npm http fetch 200 https://registry.npmjs.org/bl/-/bl-1.2.1.tgz
+npm http 200 https://registry.npmjs.org/ms
+npm info install inherits@2.0.3 into /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/readable-stream
+npm info install core-util-is@1.0.2 into /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/readable-stream
+npm info install isarray@0.0.1 into /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/readable-stream
+npm info install string_decoder@0.10.31 into /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/readable-stream
+npm info installOne inherits@2.0.3
+npm info installOne core-util-is@1.0.2
+npm info installOne isarray@0.0.1
+npm info installOne string_decoder@0.10.31
+npm info retry fetch attempt 1 at 8:56:13 AM
+npm info attempt registry request try #1 at 8:56:13 AM
+npm http fetch GET https://registry.npmjs.org/ms/-/ms-0.7.3.tgz
+npm info install readable-stream@2.2.9 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream
+npm info install end-of-stream@1.4.0 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream
+npm info install xtend@4.0.1 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream
+npm info install bl@1.2.1 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream
+npm info installOne readable-stream@2.2.9
+npm info installOne end-of-stream@1.4.0
+npm info installOne xtend@4.0.1
+npm info installOne bl@1.2.1
+npm http fetch 200 https://registry.npmjs.org/once/-/once-1.4.0.tgz
+npm http 200 https://registry.npmjs.org/minimist
+npm http 200 https://registry.npmjs.org/through
+npm http 200 https://registry.npmjs.org/jsonparse
+npm info retry fetch attempt 1 at 8:56:13 AM
+npm info attempt registry request try #1 at 8:56:13 AM
+npm http fetch GET https://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz
+npm info retry fetch attempt 1 at 8:56:13 AM
+npm info attempt registry request try #1 at 8:56:13 AM
+npm http fetch GET https://registry.npmjs.org/through/-/through-2.3.8.tgz
+npm info install end-of-stream@1.4.0 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/pump
+npm info install once@1.4.0 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/pump
+npm info installOne end-of-stream@1.4.0
+npm info installOne once@1.4.0
+npm info retry fetch attempt 1 at 8:56:13 AM
+npm info attempt registry request try #1 at 8:56:13 AM
+npm http fetch GET https://registry.npmjs.org/jsonparse/-/jsonparse-0.0.5.tgz
+npm http fetch 200 https://registry.npmjs.org/ms/-/ms-0.7.3.tgz
+npm info preinstall string_decoder@0.10.31
+npm info preinstall process-nextick-args@1.0.7
+npm info preinstall util-deprecate@1.0.2
+npm info preinstall core-util-is@1.0.2
+npm http fetch 200 https://registry.npmjs.org/through/-/through-2.3.8.tgz
+npm info preinstall string_decoder@0.10.31
+npm info install ms@0.7.3 into /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/debug
+npm info installOne ms@0.7.3
+npm info preinstall inherits@2.0.3
+npm info preinstall isarray@0.0.1
+npm info preinstall isarray@1.0.0
+npm info build /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/readable-stream/node_modules/string_decoder
+npm http fetch 200 https://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz
+npm info install lodash@4.17.4 into /opt/app/node_modules/async
+npm info installOne lodash@4.17.4
+npm info preinstall end-of-stream@1.4.0
+npm http fetch 200 https://registry.npmjs.org/jsonparse/-/jsonparse-0.0.5.tgz
+npm info preinstall core-util-is@1.0.2
+npm info build /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/readable-stream/node_modules/process-nextick-args
+npm info build /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/readable-stream/node_modules/util-deprecate
+npm info linkStuff string_decoder@0.10.31
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/readable-stream/node_modules/inherits
+npm info build /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/readable-stream/node_modules/core-util-is
+npm info linkStuff inherits@2.0.3
+npm info install string_decoder@0.10.31
+npm info postinstall string_decoder@0.10.31
+npm info linkStuff process-nextick-args@1.0.7
+npm info linkStuff util-deprecate@1.0.2
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/readable-stream/node_modules/string_decoder
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/readable-stream/node_modules/core-util-is
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/readable-stream/node_modules/isarray
+npm info linkStuff core-util-is@1.0.2
+npm info install inherits@2.0.3
+npm info install minimist@0.0.8 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/mkdirp
+npm info installOne minimist@0.0.8
+npm info build /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/readable-stream/node_modules/isarray
+npm info postinstall inherits@2.0.3
+npm info preinstall end-of-stream@1.4.0
+npm info preinstall once@1.4.0
+npm info install process-nextick-args@1.0.7
+npm info install util-deprecate@1.0.2
+npm info linkStuff core-util-is@1.0.2
+npm info install through@2.3.8 into /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/JSONStream
+npm info install jsonparse@0.0.5 into /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/JSONStream
+npm info installOne through@2.3.8
+npm info installOne jsonparse@0.0.5
+npm info install core-util-is@1.0.2
+npm info postinstall process-nextick-args@1.0.7
+npm info postinstall util-deprecate@1.0.2
+npm info postinstall core-util-is@1.0.2
+npm info linkStuff string_decoder@0.10.31
+npm info linkStuff isarray@0.0.1
+npm info install core-util-is@1.0.2
+npm info linkStuff isarray@1.0.0
+npm info postinstall core-util-is@1.0.2
+npm info install string_decoder@0.10.31
+npm info install isarray@0.0.1
+npm info postinstall string_decoder@0.10.31
+npm info postinstall isarray@0.0.1
+npm info preinstall bl@1.2.1
+npm info install isarray@1.0.0
+npm info postinstall isarray@1.0.0
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/readable-stream
+npm info build /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/readable-stream
+npm info preinstall xtend@4.0.1
+npm info install once@1.4.0 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/end-of-stream
+npm info installOne once@1.4.0
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/pump/node_modules/end-of-stream
+npm info attempt registry request try #1 at 8:56:14 AM
+npm http request GET https://registry.npmjs.org/wrappy
+npm info linkStuff readable-stream@1.0.34
+npm info linkStuff readable-stream@2.0.6
+npm info install readable-stream@1.0.34
+npm info linkStuff end-of-stream@1.4.0
+npm info postinstall readable-stream@1.0.34
+npm info install readable-stream@2.0.6
+npm info postinstall readable-stream@2.0.6
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/bl
+npm info install end-of-stream@1.4.0
+npm info preinstall ms@0.7.3
+npm info build /opt/app/node_modules/dockerode/node_modules/concat-stream
+npm info postinstall end-of-stream@1.4.0
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/xtend
+npm info linkStuff bl@1.2.1
+npm info linkStuff concat-stream@1.5.2
+npm http 200 https://registry.npmjs.org/wrappy
+npm info linkStuff xtend@4.0.1
+npm info install bl@1.2.1
+npm info postinstall bl@1.2.1
+npm info install concat-stream@1.5.2
+npm info postinstall concat-stream@1.5.2
+npm info install xtend@4.0.1
+npm info postinstall xtend@4.0.1
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/debug/node_modules/ms
+npm info retry fetch attempt 1 at 8:56:14 AM
+npm info attempt registry request try #1 at 8:56:14 AM
+npm http fetch GET https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz
+npm info linkStuff ms@0.7.3
+npm info install ms@0.7.3
+npm info postinstall ms@0.7.3
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/debug
+npm info preinstall once@1.4.0
+npm info linkStuff debug@2.6.6
+npm info install debug@2.6.6
+npm info postinstall debug@2.6.6
+npm http fetch 200 https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz
+npm info preinstall through@2.3.8
+npm info preinstall jsonparse@0.0.5
+npm info install wrappy@1.0.2 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/pump/node_modules/once
+npm info installOne wrappy@1.0.2
+npm info install wrappy@1.0.2 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/end-of-stream/node_modules/once
+npm info installOne wrappy@1.0.2
+npm info preinstall minimist@0.0.8
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/JSONStream/node_modules/through
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/JSONStream/node_modules/jsonparse
+npm info preinstall readable-stream@2.2.9
+npm info linkStuff through@2.3.8
+npm info linkStuff jsonparse@0.0.5
+npm info install through@2.3.8
+npm info postinstall through@2.3.8
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/mkdirp/node_modules/minimist
+npm info install jsonparse@0.0.5
+npm info postinstall jsonparse@0.0.5
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/JSONStream
+npm info linkStuff minimist@0.0.8
+npm info attempt registry request try #1 at 8:56:14 AM
+npm http request GET https://registry.npmjs.org/buffer-shims
+npm info install minimist@0.0.8
+npm info linkStuff JSONStream@0.10.0
+npm info postinstall minimist@0.0.8
+npm info retry fetch attempt 1 at 8:56:14 AM
+npm info attempt registry request try #1 at 8:56:14 AM
+npm http fetch GET https://registry.npmjs.org/string_decoder/-/string_decoder-1.0.0.tgz
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/mkdirp
+npm info install JSONStream@0.10.0
+npm info postinstall JSONStream@0.10.0
+npm info linkStuff mkdirp@0.5.1
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem
+npm info preinstall wrappy@1.0.2
+npm info preinstall wrappy@1.0.2
+npm info linkStuff docker-modem@0.3.7
+npm info install mkdirp@0.5.1
+npm info postinstall mkdirp@0.5.1
+npm info install docker-modem@0.3.7
+npm info postinstall docker-modem@0.3.7
+npm http 200 https://registry.npmjs.org/buffer-shims
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/pump/node_modules/once/node_modules/wrappy
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/end-of-stream/node_modules/once/node_modules/wrappy
+npm http fetch 200 https://registry.npmjs.org/string_decoder/-/string_decoder-1.0.0.tgz
+npm info retry fetch attempt 1 at 8:56:14 AM
+npm info attempt registry request try #1 at 8:56:14 AM
+npm http fetch GET https://registry.npmjs.org/buffer-shims/-/buffer-shims-1.0.0.tgz
+npm info linkStuff wrappy@1.0.2
+npm info linkStuff wrappy@1.0.2
+npm info install wrappy@1.0.2
+npm info install wrappy@1.0.2
+npm info postinstall wrappy@1.0.2
+npm info postinstall wrappy@1.0.2
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/pump/node_modules/once
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/end-of-stream/node_modules/once
+npm info linkStuff once@1.4.0
+npm info linkStuff once@1.4.0
+npm info install once@1.4.0
+npm info postinstall once@1.4.0
+npm info install once@1.4.0
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/end-of-stream
+npm info postinstall once@1.4.0
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/pump
+npm info linkStuff end-of-stream@1.4.0
+npm info linkStuff pump@1.0.2
+npm info install end-of-stream@1.4.0
+npm http fetch 200 https://registry.npmjs.org/buffer-shims/-/buffer-shims-1.0.0.tgz
+npm info postinstall end-of-stream@1.4.0
+npm info install pump@1.0.2
+npm info postinstall pump@1.0.2
+npm info install isarray@1.0.0 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream
+npm info install inherits@2.0.3 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream
+npm info install process-nextick-args@1.0.7 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream
+npm info install util-deprecate@1.0.2 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream
+npm info install core-util-is@1.0.2 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream
+npm info install string_decoder@1.0.0 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream
+npm info install buffer-shims@1.0.0 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream
+npm info installOne isarray@1.0.0
+npm info installOne inherits@2.0.3
+npm info installOne process-nextick-args@1.0.7
+npm info installOne util-deprecate@1.0.2
+npm info installOne core-util-is@1.0.2
+npm info installOne string_decoder@1.0.0
+npm info installOne buffer-shims@1.0.0
+npm info preinstall buffer-shims@1.0.0
+npm info preinstall inherits@2.0.3
+npm info preinstall string_decoder@1.0.0
+npm info preinstall process-nextick-args@1.0.7
+npm info preinstall util-deprecate@1.0.2
+npm info preinstall core-util-is@1.0.2
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream/node_modules/inherits
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream/node_modules/buffer-shims
+npm info linkStuff inherits@2.0.3
+npm info preinstall isarray@1.0.0
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream/node_modules/process-nextick-args
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream/node_modules/util-deprecate
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream/node_modules/core-util-is
+npm info linkStuff buffer-shims@1.0.0
+npm info install inherits@2.0.3
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream/node_modules/string_decoder
+npm info postinstall inherits@2.0.3
+npm info linkStuff process-nextick-args@1.0.7
+npm info linkStuff util-deprecate@1.0.2
+npm info linkStuff core-util-is@1.0.2
+npm info install buffer-shims@1.0.0
+npm info postinstall buffer-shims@1.0.0
+npm info install process-nextick-args@1.0.7
+npm info install util-deprecate@1.0.2
+npm info postinstall process-nextick-args@1.0.7
+npm info postinstall util-deprecate@1.0.2
+npm info install core-util-is@1.0.2
+npm info linkStuff string_decoder@1.0.0
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream/node_modules/isarray
+npm info postinstall core-util-is@1.0.2
+npm info linkStuff isarray@1.0.0
+npm info install string_decoder@1.0.0
+npm info postinstall string_decoder@1.0.0
+npm info install isarray@1.0.0
+npm info postinstall isarray@1.0.0
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream
+npm info linkStuff readable-stream@2.2.9
+npm info install readable-stream@2.2.9
+npm info postinstall readable-stream@2.2.9
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream
+npm info linkStuff tar-stream@1.5.2
+npm info install tar-stream@1.5.2
+npm info postinstall tar-stream@1.5.2
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs
+npm info linkStuff tar-fs@1.12.0
+npm info install tar-fs@1.12.0
+npm info postinstall tar-fs@1.12.0
+npm info build /opt/app/node_modules/dockerode
+npm info linkStuff dockerode@2.4.3
+npm info install dockerode@2.4.3
+npm info postinstall dockerode@2.4.3
+npm info preinstall lodash@4.17.4
+npm info build /opt/app/node_modules/async/node_modules/lodash
+npm info linkStuff lodash@4.17.4
+npm info install lodash@4.17.4
+npm info postinstall lodash@4.17.4
+npm info build /opt/app/node_modules/async
+npm info linkStuff async@2.4.0
+npm info install async@2.4.0
+npm info postinstall async@2.4.0
+npm info build /opt/app
+npm info linkStuff music-validation@1.0.0
+npm info install music-validation@1.0.0
+npm info postinstall music-validation@1.0.0
+npm info prepublish music-validation@1.0.0
+chance@1.0.8 node_modules/chance
+
+chai@3.5.0 node_modules/chai
+├── assertion-error@1.0.2
+├── type-detect@1.0.0
+└── deep-eql@0.1.3 (type-detect@0.1.1)
+
+dockerode@2.4.3 node_modules/dockerode
+├── concat-stream@1.5.2 (typedarray@0.0.6, inherits@2.0.3, readable-stream@2.0.6)
+├── docker-modem@0.3.7 (split-ca@1.0.1, readable-stream@1.0.34, debug@2.6.6, JSONStream@0.10.0)
+└── tar-fs@1.12.0 (mkdirp@0.5.1, pump@1.0.2, tar-stream@1.5.2)
+
+async@2.4.0 node_modules/async
+└── lodash@4.17.4
+npm info ok
+ ---> 529c155bdb4e
+Removing intermediate container 63ce91d2000b
+Step 6/6 : CMD node /opt/app/auditor.js
+ ---> Running in 18facce3d14d
+ ---> a2470ca50597
+Removing intermediate container 18facce3d14d
+Successfully built a2470ca50597
+SECURITY WARNING: You are building a Docker image from Windows against a non-Windows Docker host. All files and directories added to build context will have '-rwxr-xr-x' permissions. It is recommended to double check and reset permissions for sensitive files and directories.
+Sending build context to Docker daemon  15.36kB
+Step 1/6 : FROM node:4.3.1
+ ---> ddb7a7253258
+Step 2/6 : MAINTAINER Olivier Liechti <olivier.liechti@heig-vd.ch>
+ ---> Running in 88b8095c1b75
+ ---> d9199b3d0c35
+Removing intermediate container 88b8095c1b75
+Step 3/6 : COPY src /opt/app/
+ ---> 04b0fa503247
+Removing intermediate container d6f676b35094
+Step 4/6 : WORKDIR /opt/app/
+ ---> 883b6049c6ea
+Removing intermediate container 9cc142cd62d3
+Step 5/6 : RUN npm install
+ ---> Running in 6f400e6e3b8d
+npm info it worked if it ends with ok
+npm info using npm@2.14.12
+npm info using node@v4.3.1
+npm WARN package.json music-validation@1.0.0 No description
+npm WARN package.json music-validation@1.0.0 No repository field.
+npm WARN package.json music-validation@1.0.0 No README data
+npm info preinstall music-validation@1.0.0
+npm info attempt registry request try #1 at 8:56:17 AM
+npm http request GET https://registry.npmjs.org/chai
+npm info attempt registry request try #1 at 8:56:17 AM
+npm http request GET https://registry.npmjs.org/chance
+npm info attempt registry request try #1 at 8:56:17 AM
+npm http request GET https://registry.npmjs.org/dockerode
+npm info attempt registry request try #1 at 8:56:17 AM
+npm http request GET https://registry.npmjs.org/async
+npm http 200 https://registry.npmjs.org/chance
+npm http 200 https://registry.npmjs.org/chai
+npm info retry fetch attempt 1 at 8:56:17 AM
+npm info attempt registry request try #1 at 8:56:17 AM
+npm http fetch GET https://registry.npmjs.org/chance/-/chance-1.0.8.tgz
+npm info retry fetch attempt 1 at 8:56:17 AM
+npm info attempt registry request try #1 at 8:56:17 AM
+npm http fetch GET https://registry.npmjs.org/chai/-/chai-3.5.0.tgz
+npm http 200 https://registry.npmjs.org/dockerode
+npm info retry fetch attempt 1 at 8:56:18 AM
+npm info attempt registry request try #1 at 8:56:18 AM
+npm http fetch GET https://registry.npmjs.org/dockerode/-/dockerode-2.4.3.tgz
+npm http 200 https://registry.npmjs.org/async
+npm info retry fetch attempt 1 at 8:56:18 AM
+npm info attempt registry request try #1 at 8:56:18 AM
+npm http fetch GET https://registry.npmjs.org/async/-/async-2.4.0.tgz
+npm http fetch 200 https://registry.npmjs.org/chance/-/chance-1.0.8.tgz
+npm http fetch 200 https://registry.npmjs.org/chai/-/chai-3.5.0.tgz
+npm http fetch 200 https://registry.npmjs.org/dockerode/-/dockerode-2.4.3.tgz
+npm http fetch 200 https://registry.npmjs.org/async/-/async-2.4.0.tgz
+npm info install dockerode@2.4.3 into /opt/app
+npm info install chai@3.5.0 into /opt/app
+npm info install chance@1.0.8 into /opt/app
+npm info install async@2.4.0 into /opt/app
+npm info installOne dockerode@2.4.3
+npm info installOne chai@3.5.0
+npm info installOne chance@1.0.8
+npm info installOne async@2.4.0
+npm info preinstall dockerode@2.4.3
+npm info attempt registry request try #1 at 8:56:19 AM
+npm http request GET https://registry.npmjs.org/docker-modem
+npm info attempt registry request try #1 at 8:56:19 AM
+npm http request GET https://registry.npmjs.org/tar-fs
+npm info attempt registry request try #1 at 8:56:19 AM
+npm http request GET https://registry.npmjs.org/concat-stream
+npm http 200 https://registry.npmjs.org/tar-fs
+npm http 200 https://registry.npmjs.org/concat-stream
+npm http 200 https://registry.npmjs.org/docker-modem
+npm info retry fetch attempt 1 at 8:56:19 AM
+npm info attempt registry request try #1 at 8:56:19 AM
+npm http fetch GET https://registry.npmjs.org/tar-fs/-/tar-fs-1.12.0.tgz
+npm info retry fetch attempt 1 at 8:56:19 AM
+npm info attempt registry request try #1 at 8:56:19 AM
+npm http fetch GET https://registry.npmjs.org/concat-stream/-/concat-stream-1.5.2.tgz
+npm info retry fetch attempt 1 at 8:56:19 AM
+npm info attempt registry request try #1 at 8:56:19 AM
+npm http fetch GET https://registry.npmjs.org/docker-modem/-/docker-modem-0.3.7.tgz
+npm info preinstall chai@3.5.0
+npm http fetch 200 https://registry.npmjs.org/tar-fs/-/tar-fs-1.12.0.tgz
+npm http fetch 200 https://registry.npmjs.org/concat-stream/-/concat-stream-1.5.2.tgz
+npm info attempt registry request try #1 at 8:56:19 AM
+npm http request GET https://registry.npmjs.org/assertion-error
+npm info attempt registry request try #1 at 8:56:19 AM
+npm http request GET https://registry.npmjs.org/deep-eql
+npm info attempt registry request try #1 at 8:56:19 AM
+npm http request GET https://registry.npmjs.org/type-detect
+npm http fetch 200 https://registry.npmjs.org/docker-modem/-/docker-modem-0.3.7.tgz
+npm info install tar-fs@1.12.0 into /opt/app/node_modules/dockerode
+npm info install concat-stream@1.5.2 into /opt/app/node_modules/dockerode
+npm info install docker-modem@0.3.7 into /opt/app/node_modules/dockerode
+npm info installOne tar-fs@1.12.0
+npm info installOne concat-stream@1.5.2
+npm info installOne docker-modem@0.3.7
+npm http 200 https://registry.npmjs.org/assertion-error
+npm info retry fetch attempt 1 at 8:56:19 AM
+npm info attempt registry request try #1 at 8:56:19 AM
+npm http fetch GET https://registry.npmjs.org/assertion-error/-/assertion-error-1.0.2.tgz
+npm http 200 https://registry.npmjs.org/type-detect
+npm http 200 https://registry.npmjs.org/deep-eql
+npm info retry fetch attempt 1 at 8:56:19 AM
+npm info attempt registry request try #1 at 8:56:19 AM
+npm http fetch GET https://registry.npmjs.org/type-detect/-/type-detect-1.0.0.tgz
+npm info retry fetch attempt 1 at 8:56:19 AM
+npm info attempt registry request try #1 at 8:56:19 AM
+npm http fetch GET https://registry.npmjs.org/deep-eql/-/deep-eql-0.1.3.tgz
+npm info preinstall concat-stream@1.5.2
+npm info preinstall chance@1.0.8
+npm info build /opt/app/node_modules/chance
+npm info attempt registry request try #1 at 8:56:19 AM
+npm http request GET https://registry.npmjs.org/inherits
+npm info attempt registry request try #1 at 8:56:19 AM
+npm http request GET https://registry.npmjs.org/typedarray
+npm info attempt registry request try #1 at 8:56:19 AM
+npm http request GET https://registry.npmjs.org/readable-stream
+npm info preinstall docker-modem@0.3.7
+npm info linkStuff chance@1.0.8
+npm info install chance@1.0.8
+npm http fetch 200 https://registry.npmjs.org/assertion-error/-/assertion-error-1.0.2.tgz
+npm info postinstall chance@1.0.8
+npm info attempt registry request try #1 at 8:56:19 AM
+npm http request GET https://registry.npmjs.org/JSONStream
+npm info attempt registry request try #1 at 8:56:19 AM
+npm http request GET https://registry.npmjs.org/debug
+npm info attempt registry request try #1 at 8:56:19 AM
+npm http request GET https://registry.npmjs.org/split-ca
+npm http fetch 200 https://registry.npmjs.org/type-detect/-/type-detect-1.0.0.tgz
+npm http fetch 200 https://registry.npmjs.org/deep-eql/-/deep-eql-0.1.3.tgz
+npm info install assertion-error@1.0.2 into /opt/app/node_modules/chai
+npm info install type-detect@1.0.0 into /opt/app/node_modules/chai
+npm info install deep-eql@0.1.3 into /opt/app/node_modules/chai
+npm info installOne assertion-error@1.0.2
+npm info installOne type-detect@1.0.0
+npm info installOne deep-eql@0.1.3
+npm http 200 https://registry.npmjs.org/inherits
+npm http 200 https://registry.npmjs.org/typedarray
+npm info preinstall tar-fs@1.12.0
+npm info retry fetch attempt 1 at 8:56:19 AM
+npm info attempt registry request try #1 at 8:56:19 AM
+npm http fetch GET https://registry.npmjs.org/inherits/-/inherits-2.0.3.tgz
+npm info retry fetch attempt 1 at 8:56:19 AM
+npm info attempt registry request try #1 at 8:56:19 AM
+npm http fetch GET https://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz
+npm http 200 https://registry.npmjs.org/split-ca
+npm http 200 https://registry.npmjs.org/JSONStream
+npm http 200 https://registry.npmjs.org/debug
+npm info attempt registry request try #1 at 8:56:19 AM
+npm http request GET https://registry.npmjs.org/tar-stream
+npm info attempt registry request try #1 at 8:56:19 AM
+npm http request GET https://registry.npmjs.org/mkdirp
+npm info attempt registry request try #1 at 8:56:19 AM
+npm http request GET https://registry.npmjs.org/pump
+npm info retry fetch attempt 1 at 8:56:19 AM
+npm info attempt registry request try #1 at 8:56:19 AM
+npm http fetch GET https://registry.npmjs.org/split-ca/-/split-ca-1.0.1.tgz
+npm info retry fetch attempt 1 at 8:56:19 AM
+npm info attempt registry request try #1 at 8:56:19 AM
+npm http fetch GET https://registry.npmjs.org/JSONStream/-/JSONStream-0.10.0.tgz
+npm http fetch 200 https://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz
+npm http 200 https://registry.npmjs.org/readable-stream
+npm http fetch 200 https://registry.npmjs.org/inherits/-/inherits-2.0.3.tgz
+npm info retry fetch attempt 1 at 8:56:19 AM
+npm info attempt registry request try #1 at 8:56:19 AM
+npm http fetch GET https://registry.npmjs.org/debug/-/debug-2.6.6.tgz
+npm info retry fetch attempt 1 at 8:56:19 AM
+npm info attempt registry request try #1 at 8:56:19 AM
+npm http fetch GET https://registry.npmjs.org/readable-stream/-/readable-stream-2.0.6.tgz
+npm info retry fetch attempt 1 at 8:56:19 AM
+npm info attempt registry request try #1 at 8:56:19 AM
+npm http fetch GET https://registry.npmjs.org/readable-stream/-/readable-stream-1.0.34.tgz
+npm http 200 https://registry.npmjs.org/mkdirp
+npm http 200 https://registry.npmjs.org/tar-stream
+npm http 200 https://registry.npmjs.org/pump
+npm http fetch 200 https://registry.npmjs.org/split-ca/-/split-ca-1.0.1.tgz
+npm http fetch 200 https://registry.npmjs.org/JSONStream/-/JSONStream-0.10.0.tgz
+npm info preinstall assertion-error@1.0.2
+npm info retry fetch attempt 1 at 8:56:20 AM
+npm info attempt registry request try #1 at 8:56:20 AM
+npm http fetch GET https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.1.tgz
+npm http fetch 200 https://registry.npmjs.org/debug/-/debug-2.6.6.tgz
+npm info retry fetch attempt 1 at 8:56:20 AM
+npm info attempt registry request try #1 at 8:56:20 AM
+npm http fetch GET https://registry.npmjs.org/tar-stream/-/tar-stream-1.5.2.tgz
+npm info retry fetch attempt 1 at 8:56:20 AM
+npm info attempt registry request try #1 at 8:56:20 AM
+npm http fetch GET https://registry.npmjs.org/pump/-/pump-1.0.2.tgz
+npm info preinstall deep-eql@0.1.3
+npm info preinstall type-detect@1.0.0
+npm info build /opt/app/node_modules/chai/node_modules/assertion-error
+npm info linkStuff assertion-error@1.0.2
+npm http fetch 200 https://registry.npmjs.org/readable-stream/-/readable-stream-2.0.6.tgz
+npm info install assertion-error@1.0.2
+npm info postinstall assertion-error@1.0.2
+npm info build /opt/app/node_modules/chai/node_modules/type-detect
+npm info retry fetch attempt 1 at 8:56:20 AM
+npm info attempt registry request try #1 at 8:56:20 AM
+npm http fetch GET https://registry.npmjs.org/type-detect/-/type-detect-0.1.1.tgz
+npm info linkStuff type-detect@1.0.0
+npm http fetch 200 https://registry.npmjs.org/readable-stream/-/readable-stream-1.0.34.tgz
+npm info install type-detect@1.0.0
+npm info postinstall type-detect@1.0.0
+npm info preinstall async@2.4.0
+npm info attempt registry request try #1 at 8:56:20 AM
+npm http request GET https://registry.npmjs.org/lodash
+npm info install typedarray@0.0.6 into /opt/app/node_modules/dockerode/node_modules/concat-stream
+npm info install inherits@2.0.3 into /opt/app/node_modules/dockerode/node_modules/concat-stream
+npm info install readable-stream@2.0.6 into /opt/app/node_modules/dockerode/node_modules/concat-stream
+npm info installOne typedarray@0.0.6
+npm info installOne inherits@2.0.3
+npm info installOne readable-stream@2.0.6
+npm http fetch 200 https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.1.tgz
+npm http fetch 200 https://registry.npmjs.org/tar-stream/-/tar-stream-1.5.2.tgz
+npm http fetch 200 https://registry.npmjs.org/pump/-/pump-1.0.2.tgz
+npm http fetch 200 https://registry.npmjs.org/type-detect/-/type-detect-0.1.1.tgz
+npm info preinstall inherits@2.0.3
+npm info install mkdirp@0.5.1 into /opt/app/node_modules/dockerode/node_modules/tar-fs
+npm info install tar-stream@1.5.2 into /opt/app/node_modules/dockerode/node_modules/tar-fs
+npm info install pump@1.0.2 into /opt/app/node_modules/dockerode/node_modules/tar-fs
+npm info installOne mkdirp@0.5.1
+npm info installOne tar-stream@1.5.2
+npm info installOne pump@1.0.2
+npm info install type-detect@0.1.1 into /opt/app/node_modules/chai/node_modules/deep-eql
+npm info installOne type-detect@0.1.1
+npm info install split-ca@1.0.1 into /opt/app/node_modules/dockerode/node_modules/docker-modem
+npm info install debug@2.6.6 into /opt/app/node_modules/dockerode/node_modules/docker-modem
+npm info install readable-stream@1.0.34 into /opt/app/node_modules/dockerode/node_modules/docker-modem
+npm info install JSONStream@0.10.0 into /opt/app/node_modules/dockerode/node_modules/docker-modem
+npm info installOne split-ca@1.0.1
+npm info installOne debug@2.6.6
+npm info installOne readable-stream@1.0.34
+npm info installOne JSONStream@0.10.0
+npm info build /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/inherits
+npm info preinstall typedarray@0.0.6
+npm info linkStuff inherits@2.0.3
+npm http 200 https://registry.npmjs.org/lodash
+npm info install inherits@2.0.3
+npm info postinstall inherits@2.0.3
+npm info retry fetch attempt 1 at 8:56:20 AM
+npm info attempt registry request try #1 at 8:56:20 AM
+npm http fetch GET https://registry.npmjs.org/lodash/-/lodash-4.17.4.tgz
+npm info build /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/typedarray
+npm info linkStuff typedarray@0.0.6
+npm info install typedarray@0.0.6
+npm info postinstall typedarray@0.0.6
+npm info preinstall type-detect@0.1.1
+npm http fetch 200 https://registry.npmjs.org/lodash/-/lodash-4.17.4.tgz
+npm info preinstall tar-stream@1.5.2
+npm info preinstall pump@1.0.2
+npm info preinstall readable-stream@2.0.6
+npm info build /opt/app/node_modules/chai/node_modules/deep-eql/node_modules/type-detect
+npm info linkStuff type-detect@0.1.1
+npm info attempt registry request try #1 at 8:56:20 AM
+npm http request GET https://registry.npmjs.org/bl
+npm info attempt registry request try #1 at 8:56:20 AM
+npm http request GET https://registry.npmjs.org/end-of-stream
+npm info attempt registry request try #1 at 8:56:20 AM
+npm http request GET https://registry.npmjs.org/xtend
+npm info install type-detect@0.1.1
+npm info retry fetch attempt 1 at 8:56:20 AM
+npm info attempt registry request try #1 at 8:56:20 AM
+npm http fetch GET https://registry.npmjs.org/readable-stream/-/readable-stream-2.2.9.tgz
+npm info attempt registry request try #1 at 8:56:20 AM
+npm http request GET https://registry.npmjs.org/once
+npm info postinstall type-detect@0.1.1
+npm info build /opt/app/node_modules/chai/node_modules/deep-eql
+npm info attempt registry request try #1 at 8:56:20 AM
+npm http request GET https://registry.npmjs.org/string_decoder
+npm info attempt registry request try #1 at 8:56:20 AM
+npm http request GET https://registry.npmjs.org/util-deprecate
+npm info attempt registry request try #1 at 8:56:20 AM
+npm http request GET https://registry.npmjs.org/core-util-is
+npm info attempt registry request try #1 at 8:56:20 AM
+npm http request GET https://registry.npmjs.org/isarray
+npm info attempt registry request try #1 at 8:56:20 AM
+npm http request GET https://registry.npmjs.org/process-nextick-args
+npm info linkStuff deep-eql@0.1.3
+npm info install deep-eql@0.1.3
+npm info postinstall deep-eql@0.1.3
+npm info build /opt/app/node_modules/chai
+npm info preinstall split-ca@1.0.1
+npm info linkStuff chai@3.5.0
+npm info preinstall readable-stream@1.0.34
+npm info install chai@3.5.0
+npm info postinstall chai@3.5.0
+npm http 200 https://registry.npmjs.org/bl
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/split-ca
+npm info preinstall debug@2.6.6
+npm http 200 https://registry.npmjs.org/end-of-stream
+npm info linkStuff split-ca@1.0.1
+npm http 200 https://registry.npmjs.org/xtend
+npm info retry fetch attempt 1 at 8:56:20 AM
+npm info attempt registry request try #1 at 8:56:20 AM
+npm http fetch GET https://registry.npmjs.org/bl/-/bl-1.2.1.tgz
+npm http fetch 200 https://registry.npmjs.org/readable-stream/-/readable-stream-2.2.9.tgz
+npm info install split-ca@1.0.1
+npm info retry fetch attempt 1 at 8:56:20 AM
+npm info attempt registry request try #1 at 8:56:20 AM
+npm http fetch GET https://registry.npmjs.org/end-of-stream/-/end-of-stream-1.4.0.tgz
+npm info postinstall split-ca@1.0.1
+npm info retry fetch attempt 1 at 8:56:20 AM
+npm info attempt registry request try #1 at 8:56:20 AM
+npm http fetch GET https://registry.npmjs.org/xtend/-/xtend-4.0.1.tgz
+npm info attempt registry request try #1 at 8:56:21 AM
+npm http request GET https://registry.npmjs.org/ms
+npm http 200 https://registry.npmjs.org/once
+npm http 200 https://registry.npmjs.org/string_decoder
+npm http 200 https://registry.npmjs.org/util-deprecate
+npm http 200 https://registry.npmjs.org/isarray
+npm info retry fetch attempt 1 at 8:56:21 AM
+npm info attempt registry request try #1 at 8:56:21 AM
+npm http fetch GET https://registry.npmjs.org/once/-/once-1.4.0.tgz
+npm info retry fetch attempt 1 at 8:56:21 AM
+npm info attempt registry request try #1 at 8:56:21 AM
+npm http fetch GET https://registry.npmjs.org/string_decoder/-/string_decoder-0.10.31.tgz
+npm info retry fetch attempt 1 at 8:56:21 AM
+npm info attempt registry request try #1 at 8:56:21 AM
+npm http fetch GET https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz
+npm info retry fetch attempt 1 at 8:56:21 AM
+npm info attempt registry request try #1 at 8:56:21 AM
+npm http fetch GET https://registry.npmjs.org/isarray/-/isarray-0.0.1.tgz
+npm info retry fetch attempt 1 at 8:56:21 AM
+npm info attempt registry request try #1 at 8:56:21 AM
+npm http fetch GET https://registry.npmjs.org/isarray/-/isarray-1.0.0.tgz
+npm http 200 https://registry.npmjs.org/process-nextick-args
+npm http 200 https://registry.npmjs.org/core-util-is
+npm info retry fetch attempt 1 at 8:56:21 AM
+npm info attempt registry request try #1 at 8:56:21 AM
+npm http fetch GET https://registry.npmjs.org/process-nextick-args/-/process-nextick-args-1.0.7.tgz
+npm info retry fetch attempt 1 at 8:56:21 AM
+npm info attempt registry request try #1 at 8:56:21 AM
+npm http fetch GET https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.2.tgz
+npm info preinstall mkdirp@0.5.1
+npm http fetch 200 https://registry.npmjs.org/end-of-stream/-/end-of-stream-1.4.0.tgz
+npm info install lodash@4.17.4 into /opt/app/node_modules/async
+npm info installOne lodash@4.17.4
+npm http fetch 200 https://registry.npmjs.org/once/-/once-1.4.0.tgz
+npm http fetch 200 https://registry.npmjs.org/string_decoder/-/string_decoder-0.10.31.tgz
+npm http fetch 200 https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz
+npm http 200 https://registry.npmjs.org/ms
+npm http fetch 200 https://registry.npmjs.org/xtend/-/xtend-4.0.1.tgz
+npm info attempt registry request try #1 at 8:56:21 AM
+npm http request GET https://registry.npmjs.org/minimist
+npm info install end-of-stream@1.4.0 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/pump
+npm info install once@1.4.0 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/pump
+npm info installOne end-of-stream@1.4.0
+npm info installOne once@1.4.0
+npm http fetch 200 https://registry.npmjs.org/bl/-/bl-1.2.1.tgz
+npm http fetch 200 https://registry.npmjs.org/isarray/-/isarray-1.0.0.tgz
+npm info retry fetch attempt 1 at 8:56:21 AM
+npm info attempt registry request try #1 at 8:56:21 AM
+npm http fetch GET https://registry.npmjs.org/ms/-/ms-0.7.3.tgz
+npm http fetch 200 https://registry.npmjs.org/isarray/-/isarray-0.0.1.tgz
+npm http fetch 200 https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.2.tgz
+npm info install readable-stream@2.2.9 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream
+npm info install end-of-stream@1.4.0 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream
+npm info install xtend@4.0.1 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream
+npm info install bl@1.2.1 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream
+npm info installOne readable-stream@2.2.9
+npm info installOne end-of-stream@1.4.0
+npm info installOne xtend@4.0.1
+npm info installOne bl@1.2.1
+npm http fetch 200 https://registry.npmjs.org/process-nextick-args/-/process-nextick-args-1.0.7.tgz
+npm http 200 https://registry.npmjs.org/minimist
+npm info install inherits@2.0.3 into /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/readable-stream
+npm info install string_decoder@0.10.31 into /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/readable-stream
+npm info install isarray@0.0.1 into /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/readable-stream
+npm info install core-util-is@1.0.2 into /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/readable-stream
+npm info installOne inherits@2.0.3
+npm info installOne string_decoder@0.10.31
+npm info installOne isarray@0.0.1
+npm info installOne core-util-is@1.0.2
+npm http fetch 200 https://registry.npmjs.org/ms/-/ms-0.7.3.tgz
+npm info retry fetch attempt 1 at 8:56:21 AM
+npm info attempt registry request try #1 at 8:56:21 AM
+npm http fetch GET https://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz
+npm info install string_decoder@0.10.31 into /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/readable-stream
+npm info install util-deprecate@1.0.2 into /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/readable-stream
+npm info install isarray@1.0.0 into /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/readable-stream
+npm info install core-util-is@1.0.2 into /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/readable-stream
+npm info install process-nextick-args@1.0.7 into /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/readable-stream
+npm info installOne string_decoder@0.10.31
+npm info installOne util-deprecate@1.0.2
+npm info installOne isarray@1.0.0
+npm info installOne core-util-is@1.0.2
+npm info installOne process-nextick-args@1.0.7
+npm info install ms@0.7.3 into /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/debug
+npm info installOne ms@0.7.3
+npm info preinstall end-of-stream@1.4.0
+npm info preinstall once@1.4.0
+npm info preinstall JSONStream@0.10.0
+npm http fetch 200 https://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz
+npm info preinstall end-of-stream@1.4.0
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/pump/node_modules/end-of-stream
+npm info install minimist@0.0.8 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/mkdirp
+npm info installOne minimist@0.0.8
+npm info attempt registry request try #1 at 8:56:21 AM
+npm http request GET https://registry.npmjs.org/wrappy
+npm info attempt registry request try #1 at 8:56:21 AM
+npm http request GET https://registry.npmjs.org/jsonparse
+npm info attempt registry request try #1 at 8:56:21 AM
+npm http request GET https://registry.npmjs.org/through
+npm info linkStuff end-of-stream@1.4.0
+npm info install end-of-stream@1.4.0
+npm info postinstall end-of-stream@1.4.0
+npm info preinstall string_decoder@0.10.31
+npm info preinstall inherits@2.0.3
+npm info preinstall isarray@0.0.1
+npm http 200 https://registry.npmjs.org/wrappy
+npm info preinstall core-util-is@1.0.2
+npm info preinstall string_decoder@0.10.31
+npm info preinstall bl@1.2.1
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/readable-stream/node_modules/inherits
+npm http 200 https://registry.npmjs.org/jsonparse
+npm http 200 https://registry.npmjs.org/through
+npm info preinstall xtend@4.0.1
+npm info linkStuff inherits@2.0.3
+npm info preinstall util-deprecate@1.0.2
+npm info preinstall process-nextick-args@1.0.7
+npm info install once@1.4.0 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/end-of-stream
+npm info installOne once@1.4.0
+npm info preinstall core-util-is@1.0.2
+npm info preinstall ms@0.7.3
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/readable-stream/node_modules/string_decoder
+npm info retry fetch attempt 1 at 8:56:21 AM
+npm info attempt registry request try #1 at 8:56:21 AM
+npm http fetch GET https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/readable-stream/node_modules/isarray
+npm info install inherits@2.0.3
+npm info postinstall inherits@2.0.3
+npm info retry fetch attempt 1 at 8:56:21 AM
+npm info attempt registry request try #1 at 8:56:21 AM
+npm http fetch GET https://registry.npmjs.org/jsonparse/-/jsonparse-0.0.5.tgz
+npm info retry fetch attempt 1 at 8:56:21 AM
+npm info attempt registry request try #1 at 8:56:21 AM
+npm http fetch GET https://registry.npmjs.org/through/-/through-2.3.8.tgz
+npm info linkStuff string_decoder@0.10.31
+npm info preinstall isarray@1.0.0
+npm info linkStuff isarray@0.0.1
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/readable-stream/node_modules/core-util-is
+npm info build /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/readable-stream/node_modules/string_decoder
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/bl
+npm info install string_decoder@0.10.31
+npm info install isarray@0.0.1
+npm info postinstall string_decoder@0.10.31
+npm info postinstall isarray@0.0.1
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/xtend
+npm info build /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/readable-stream/node_modules/util-deprecate
+npm info build /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/readable-stream/node_modules/process-nextick-args
+npm http fetch 200 https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz
+npm info linkStuff core-util-is@1.0.2
+npm info linkStuff string_decoder@0.10.31
+npm info build /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/readable-stream/node_modules/core-util-is
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/debug/node_modules/ms
+npm http fetch 200 https://registry.npmjs.org/jsonparse/-/jsonparse-0.0.5.tgz
+npm info linkStuff bl@1.2.1
+npm http fetch 200 https://registry.npmjs.org/through/-/through-2.3.8.tgz
+npm info install core-util-is@1.0.2
+npm info install string_decoder@0.10.31
+npm info postinstall core-util-is@1.0.2
+npm info postinstall string_decoder@0.10.31
+npm info linkStuff xtend@4.0.1
+npm info install bl@1.2.1
+npm info linkStuff util-deprecate@1.0.2
+npm info linkStuff process-nextick-args@1.0.7
+npm info postinstall bl@1.2.1
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/readable-stream
+npm info linkStuff core-util-is@1.0.2
+npm info linkStuff ms@0.7.3
+npm info build /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/readable-stream/node_modules/isarray
+npm info install xtend@4.0.1
+npm info install util-deprecate@1.0.2
+npm info install process-nextick-args@1.0.7
+npm info postinstall xtend@4.0.1
+npm info postinstall util-deprecate@1.0.2
+npm info install core-util-is@1.0.2
+npm info postinstall process-nextick-args@1.0.7
+npm info install ms@0.7.3
+npm info postinstall core-util-is@1.0.2
+npm info install wrappy@1.0.2 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/pump/node_modules/once
+npm info installOne wrappy@1.0.2
+npm info postinstall ms@0.7.3
+npm info linkStuff readable-stream@1.0.34
+npm info linkStuff isarray@1.0.0
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/debug
+npm info install jsonparse@0.0.5 into /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/JSONStream
+npm info install through@2.3.8 into /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/JSONStream
+npm info installOne jsonparse@0.0.5
+npm info installOne through@2.3.8
+npm info install readable-stream@1.0.34
+npm info postinstall readable-stream@1.0.34
+npm info install isarray@1.0.0
+npm info postinstall isarray@1.0.0
+npm info linkStuff debug@2.6.6
+npm info build /opt/app/node_modules/dockerode/node_modules/concat-stream/node_modules/readable-stream
+npm info install debug@2.6.6
+npm info postinstall debug@2.6.6
+npm info linkStuff readable-stream@2.0.6
+npm info preinstall once@1.4.0
+npm info install readable-stream@2.0.6
+npm info postinstall readable-stream@2.0.6
+npm info build /opt/app/node_modules/dockerode/node_modules/concat-stream
+npm info linkStuff concat-stream@1.5.2
+npm info install concat-stream@1.5.2
+npm info postinstall concat-stream@1.5.2
+npm info install wrappy@1.0.2 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/end-of-stream/node_modules/once
+npm info installOne wrappy@1.0.2
+npm info preinstall wrappy@1.0.2
+npm info preinstall minimist@0.0.8
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/pump/node_modules/once/node_modules/wrappy
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/mkdirp/node_modules/minimist
+npm info preinstall readable-stream@2.2.9
+npm info linkStuff wrappy@1.0.2
+npm info linkStuff minimist@0.0.8
+npm info install wrappy@1.0.2
+npm info postinstall wrappy@1.0.2
+npm info install minimist@0.0.8
+npm info postinstall minimist@0.0.8
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/pump/node_modules/once
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/mkdirp
+npm info linkStuff once@1.4.0
+npm info preinstall wrappy@1.0.2
+npm info attempt registry request try #1 at 8:56:22 AM
+npm http request GET https://registry.npmjs.org/buffer-shims
+npm info linkStuff mkdirp@0.5.1
+npm info install once@1.4.0
+npm info postinstall once@1.4.0
+npm info retry fetch attempt 1 at 8:56:22 AM
+npm info attempt registry request try #1 at 8:56:22 AM
+npm http fetch GET https://registry.npmjs.org/string_decoder/-/string_decoder-1.0.0.tgz
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/pump
+npm info install mkdirp@0.5.1
+npm info preinstall through@2.3.8
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/end-of-stream/node_modules/once/node_modules/wrappy
+npm info postinstall mkdirp@0.5.1
+npm info preinstall jsonparse@0.0.5
+npm info linkStuff wrappy@1.0.2
+npm info linkStuff pump@1.0.2
+npm http 200 https://registry.npmjs.org/buffer-shims
+npm info install wrappy@1.0.2
+npm info install pump@1.0.2
+npm info postinstall wrappy@1.0.2
+npm info postinstall pump@1.0.2
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/end-of-stream/node_modules/once
+npm info linkStuff once@1.4.0
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/JSONStream/node_modules/through
+npm info retry fetch attempt 1 at 8:56:22 AM
+npm info attempt registry request try #1 at 8:56:22 AM
+npm http fetch GET https://registry.npmjs.org/buffer-shims/-/buffer-shims-1.0.0.tgz
+npm http fetch 200 https://registry.npmjs.org/string_decoder/-/string_decoder-1.0.0.tgz
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/JSONStream/node_modules/jsonparse
+npm info install once@1.4.0
+npm info postinstall once@1.4.0
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/end-of-stream
+npm info linkStuff through@2.3.8
+npm info linkStuff jsonparse@0.0.5
+npm info install through@2.3.8
+npm info postinstall through@2.3.8
+npm info linkStuff end-of-stream@1.4.0
+npm info install jsonparse@0.0.5
+npm info postinstall jsonparse@0.0.5
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem/node_modules/JSONStream
+npm info install end-of-stream@1.4.0
+npm info postinstall end-of-stream@1.4.0
+npm info linkStuff JSONStream@0.10.0
+npm info install JSONStream@0.10.0
+npm info postinstall JSONStream@0.10.0
+npm info build /opt/app/node_modules/dockerode/node_modules/docker-modem
+npm info linkStuff docker-modem@0.3.7
+npm info install docker-modem@0.3.7
+npm info postinstall docker-modem@0.3.7
+npm http fetch 200 https://registry.npmjs.org/buffer-shims/-/buffer-shims-1.0.0.tgz
+npm info install isarray@1.0.0 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream
+npm info install inherits@2.0.3 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream
+npm info install process-nextick-args@1.0.7 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream
+npm info install util-deprecate@1.0.2 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream
+npm info install core-util-is@1.0.2 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream
+npm info install string_decoder@1.0.0 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream
+npm info install buffer-shims@1.0.0 into /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream
+npm info installOne isarray@1.0.0
+npm info installOne inherits@2.0.3
+npm info installOne process-nextick-args@1.0.7
+npm info installOne util-deprecate@1.0.2
+npm info installOne core-util-is@1.0.2
+npm info installOne string_decoder@1.0.0
+npm info installOne buffer-shims@1.0.0
+npm info preinstall buffer-shims@1.0.0
+npm info preinstall inherits@2.0.3
+npm info preinstall string_decoder@1.0.0
+npm info preinstall process-nextick-args@1.0.7
+npm info preinstall util-deprecate@1.0.2
+npm info preinstall core-util-is@1.0.2
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream/node_modules/inherits
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream/node_modules/buffer-shims
+npm info linkStuff inherits@2.0.3
+npm info preinstall isarray@1.0.0
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream/node_modules/process-nextick-args
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream/node_modules/util-deprecate
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream/node_modules/core-util-is
+npm info linkStuff buffer-shims@1.0.0
+npm info install inherits@2.0.3
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream/node_modules/string_decoder
+npm info postinstall inherits@2.0.3
+npm info linkStuff process-nextick-args@1.0.7
+npm info linkStuff util-deprecate@1.0.2
+npm info linkStuff core-util-is@1.0.2
+npm info install buffer-shims@1.0.0
+npm info postinstall buffer-shims@1.0.0
+npm info install process-nextick-args@1.0.7
+npm info install util-deprecate@1.0.2
+npm info postinstall process-nextick-args@1.0.7
+npm info postinstall util-deprecate@1.0.2
+npm info install core-util-is@1.0.2
+npm info linkStuff string_decoder@1.0.0
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream/node_modules/isarray
+npm info postinstall core-util-is@1.0.2
+npm info linkStuff isarray@1.0.0
+npm info install string_decoder@1.0.0
+npm info postinstall string_decoder@1.0.0
+npm info install isarray@1.0.0
+npm info postinstall isarray@1.0.0
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream/node_modules/readable-stream
+npm info linkStuff readable-stream@2.2.9
+npm info install readable-stream@2.2.9
+npm info postinstall readable-stream@2.2.9
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs/node_modules/tar-stream
+npm info linkStuff tar-stream@1.5.2
+npm info install tar-stream@1.5.2
+npm info postinstall tar-stream@1.5.2
+npm info build /opt/app/node_modules/dockerode/node_modules/tar-fs
+npm info linkStuff tar-fs@1.12.0
+npm info install tar-fs@1.12.0
+npm info postinstall tar-fs@1.12.0
+npm info build /opt/app/node_modules/dockerode
+npm info linkStuff dockerode@2.4.3
+npm info install dockerode@2.4.3
+npm info postinstall dockerode@2.4.3
+npm info preinstall lodash@4.17.4
+npm info build /opt/app/node_modules/async/node_modules/lodash
+npm info linkStuff lodash@4.17.4
+npm info install lodash@4.17.4
+npm info postinstall lodash@4.17.4
+npm info build /opt/app/node_modules/async
+npm info linkStuff async@2.4.0
+npm info install async@2.4.0
+npm info postinstall async@2.4.0
+npm info build /opt/app
+npm info linkStuff music-validation@1.0.0
+npm info install music-validation@1.0.0
+npm info postinstall music-validation@1.0.0
+npm info prepublish music-validation@1.0.0
+chance@1.0.8 node_modules/chance
+
+chai@3.5.0 node_modules/chai
+├── assertion-error@1.0.2
+├── type-detect@1.0.0
+└── deep-eql@0.1.3 (type-detect@0.1.1)
+
+dockerode@2.4.3 node_modules/dockerode
+├── concat-stream@1.5.2 (inherits@2.0.3, typedarray@0.0.6, readable-stream@2.0.6)
+├── docker-modem@0.3.7 (split-ca@1.0.1, readable-stream@1.0.34, debug@2.6.6, JSONStream@0.10.0)
+└── tar-fs@1.12.0 (mkdirp@0.5.1, pump@1.0.2, tar-stream@1.5.2)
+
+async@2.4.0 node_modules/async
+└── lodash@4.17.4
+npm info ok
+ ---> a7aad49a9a68
+Removing intermediate container 6f400e6e3b8d
+Step 6/6 : ENTRYPOINT node /opt/app/app.js
+ ---> Running in 89aa88e99c64
+ ---> 658e6ee8534c
+Removing intermediate container 89aa88e99c64
+Successfully built 658e6ee8534c
+SECURITY WARNING: You are building a Docker image from Windows against a non-Windows Docker host. All files and directories added to build context will have '-rwxr-xr-x' permissions. It is recommended to double check and reset permissions for sensitive files and directories.
+
+
+*** Starting validation...
+
+origin  git@github.com:abass-mahdavi/Teaching-HEIGVD-RES-2017-Labo-DockerMusic.git (fetch)
+origin  git@github.com:abass-mahdavi/Teaching-HEIGVD-RES-2017-Labo-DockerMusic.git (push)
+Starting auditor container "9e686745d517023a4de41559a9aaea26f7d615e112689240132a15afb2b04003"
+Starting auditor container "4e54934de19a474415db2d88028fd367403e860cf3649f4b48e047363ebbce4f"
+Starting auditor container "a2a0585886f3a420631f9577c8b193269a6f744da5ae3d0f9a6a4244002ef87d"
+Starting auditor container "d7bef06ca0a0c0187db7b403e7a35141cdf74fa985a6ff254df2f6cb399eac29"
+Starting auditor container "63d540ecfd13be144148889fae8de669e248acf8402d6b4006e8f0c0f2f0a92f"
+Starting auditor container "bc099a6ea3d26931940da12d9c1e6040e9690470137024357df92747e6729857"
+Starting auditor container "fddada834f57f717c3ff57da8d8a460c347d2bb7b8ac0536f76a361254c5b35e"
+Starting auditor container "4fbf9fa9bdc99d2801094b52023f162d67fb4d2afd9dab332f2e9eeeb5ddbf08"
+Starting auditor container "f3fa183b3bbd6f04f0f4decaef39e811b8dac351a05c3e3ee8092e67e35fbf74"
+Starting auditor container "5f0664a7b2fc27110671a83389db825bc05bd3ee779e33334abefe38b496171d"
+Starting auditor container "d447797e01a9e95cc94a1e7e28b38645f2b7723870700e6a43e47a7430c49a3d"
+11 containers have been started.
+4e54934de19a474415db2d88028fd367403e860cf3649f4b48e047363ebbce4f :
+4fbf9fa9bdc99d2801094b52023f162d67fb4d2afd9dab332f2e9eeeb5ddbf08 :
+5f0664a7b2fc27110671a83389db825bc05bd3ee779e33334abefe38b496171d :
+f3fa183b3bbd6f04f0f4decaef39e811b8dac351a05c3e3ee8092e67e35fbf74 :
+d447797e01a9e95cc94a1e7e28b38645f2b7723870700e6a43e47a7430c49a3d :
+63d540ecfd13be144148889fae8de669e248acf8402d6b4006e8f0c0f2f0a92f :
+fddada834f57f717c3ff57da8d8a460c347d2bb7b8ac0536f76a361254c5b35e :
+bc099a6ea3d26931940da12d9c1e6040e9690470137024357df92747e6729857 :
+d7bef06ca0a0c0187db7b403e7a35141cdf74fa985a6ff254df2f6cb399eac29 :
+a2a0585886f3a420631f9577c8b193269a6f744da5ae3d0f9a6a4244002ef87d :
+9e686745d517023a4de41559a9aaea26f7d615e112689240132a15afb2b04003 : /opt/app/auditor.js
+/opt/app/app.js:48
+                var auditorIPAddress = auditorContainer.NetworkSettings.Networks.bridge.IPAddress;
+                                                       ^
+
+TypeError: Cannot read property 'NetworkSettings' of undefined
+    at invokeTcpInterface (/opt/app/app.js:48:42)
+    at /opt/app/app.js:75:3
+    at Object.callback (/opt/app/docker.js:82:3)
+    at /opt/app/node_modules/dockerode/lib/docker.js:424:12
+    at Modem.buildPayload (/opt/app/node_modules/dockerode/node_modules/docker-modem/lib/modem.js:255:7)
+    at IncomingMessage.<anonymous> (/opt/app/node_modules/dockerode/node_modules/docker-modem/lib/modem.js:214:14)
+    at emitNone (events.js:72:20)
+    at IncomingMessage.emit (events.js:166:7)
+    at endReadableNT (_stream_readable.js:905:12)
+    at nextTickCallbackWith2Args (node.js:437:9)
+
+amh@DESKTOP-AUG26S6 MINGW64 ~/Documents/Teaching-HEIGVD-RES-2016-LabBox/RES/Teaching-HEIGVD-RES-2017-Labo-DockerMusic (master)
+$
